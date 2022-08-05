@@ -1,13 +1,13 @@
-import axios from "axios";
-import React from "react";
-import { NavLink } from "react-router-dom";
+import axios from 'axios';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { Button } from "src/components/common";
+import { Button } from 'src/components/common';
 
-import * as S from "./styled";
+import * as S from './styled';
 
 export interface AuthFormTemplateProps {
-  formType: "login" | "register";
+  formType: 'login' | 'register';
   loginForm: React.ReactNode;
   registerForm: React.ReactNode;
   onSubmit: React.FormEventHandler;
@@ -20,16 +20,16 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
   onSubmit,
 }) => {
   const signinsubmit = () => {
-    axios.get("http://localhost:8000/", {}).then(() => {
+    axios.get('http://localhost:8000/input', {}).then(() => {
       // eslint-disable-next-line no-alert
-      alert("SignIn!");
+      alert('SignIn!');
     });
   };
 
   const registersubmit = () => {
-    axios.get("http://localhost:8000", {}).then(() => {
+    axios.get('http://localhost:8000/register', {}).then(() => {
       // eslint-disable-next-line no-alert
-      alert("register");
+      alert('register');
     });
   };
   return (
@@ -39,18 +39,16 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
         <NavLink to="/auth/register">회원가입</NavLink>
       </S.AuthFormTypeContainer>
       <S.AuthForm onSubmit={onSubmit}>
-        {formType === "login" ? loginForm : registerForm}
-        <S.ButtonContainer>
-          {formType === "login" ? (
-            <Button onClick={signinsubmit} style={{ marginTop: "2.5rem" }}>
-              로그인
-            </Button>
-          ) : (
-            <Button onClick={registersubmit} style={{ marginTop: "2.5rem" }}>
-              회원가입
-            </Button>
-          )}
-        </S.ButtonContainer>
+        {formType === 'login' ? loginForm : registerForm}
+        {formType === 'login' ? (
+          <Button onClick={signinsubmit} style={{ marginTop: '2.5rem' }}>
+            로그인
+          </Button>
+        ) : (
+          <Button onClick={registersubmit} style={{ marginTop: '2.5rem' }}>
+            회원가입
+          </Button>
+        )}
       </S.AuthForm>
     </S.AuthFormTemplateContainer>
   );
