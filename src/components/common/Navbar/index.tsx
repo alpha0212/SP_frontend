@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Ad } from "../Ad";
 import * as S from "./styled";
 
 export const Navbar: React.FC = () => {
+  const [change, setchange] = useState(true);
   return (
     <>
-      <Ad />
       <S.NavbarContainer>
-        <S.NavbarText>
-          <S.NavbarA to="#">수강신청</S.NavbarA>
-          <S.NavbarA to="auth/login">로그인</S.NavbarA>
-          <S.NavbarA to="auth/register">회원가입</S.NavbarA>
-          <S.NavbarA to="time/mytime">MY시간</S.NavbarA>
-          <S.NavbarA to="writetime">시간적기</S.NavbarA>
-          <S.NavbarA to="time/timedata">시간보기</S.NavbarA>
-        </S.NavbarText>
+        {change === true ? (
+          <S.NavbarText>
+            <S.NavbarMyPlanContainer>
+              <S.NavbarMyPlan to="time/mytime">MY플랜</S.NavbarMyPlan>
+            </S.NavbarMyPlanContainer>
+            <S.NavbarLogout
+              to="/"
+              onClick={() => {
+                setchange(!change);
+              }}
+            >
+              로그아웃
+            </S.NavbarLogout>
+          </S.NavbarText>
+        ) : (
+          <S.NavbarFormGroup>
+            <S.NavbarA
+              to="/"
+              onClick={() => {
+                setchange(!change);
+              }}
+            >
+              로그인
+            </S.NavbarA>
+            <S.NavbarA to="auth/register">회원가입</S.NavbarA>
+          </S.NavbarFormGroup>
+        )}
       </S.NavbarContainer>
     </>
   );

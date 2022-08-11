@@ -1,5 +1,4 @@
 export * from "./Navbar";
-export * from "./Ad";
 export * from "./ReviewSlide";
 export * from "./WriteTime";
 export * from "./MyTime";
@@ -8,3 +7,4 @@ export * from "./Button";
 export * from "./FormInput";
 export * from "./AuthFormTemplate";
 export * from "./RegisterForm";
+export * from "./Footer";

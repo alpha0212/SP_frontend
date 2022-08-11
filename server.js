@@ -1,42 +1,49 @@
-const http = require('http');
-const path = require('path');
+const http = require("http");
+const path = require("path");
 
-const express = require('express');
-
-const { executeQuery } = require('./config/db');
+const express = require("express");
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const port = 8000;
 
-const port = process.env.Port || 8000;
+const { executeQuery } = require("./config/db");
 
-app.get('/register', (req, res) => {
-  const sqlQuery = `INSERT INTO sptsign (user_name, user_email, user_id, user_pw, user_ch_pw) VALUES(?,?,?,?,?)`;
-  executeQuery(sqlQuery, (err, result) => {
-    res.send('success');
-    console.log(err);
-  });
+app.get("/register", async (req, res) => {
+  const sqlQuery = `insert into sptsignin (user_name, user_email, user_id, user_pw, user_ch_pw) values(?,?,?,?,?)`;
+  try {
+    const { user_name, user_email, user_id, user_pw, user_ch_pw } = req.body;
+    let userData = await executeQuery(sqlQuery, [
+      user_name,
+      user_email,
+      user_id,
+      user_pw,
+      user_ch_pw,
+    ]);
+    res.status(201).json(userData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-app.get('/input', (req, res) => {
-  const sqlQuery = `INSERT INTO sptsign(user_name, user_email, user_id, user_pw, user_ch_pw) VALUES('박준희', 'qkrcjfgml321@naver.com', 'qkrwnsgml', 'wnsgml6628', 'wnsgml6628')`;
-  executeQuery(sqlQuery, (err, result) => {
-    res.send('SignIn Success');
-    console.log(err);
-  });
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/api/users", async (req, res) => {
+  try {
+    let userData = await executeQuery(`select * from sptsignin`);
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/*', (req, res) => {
+app.get("/*", (req, res) => {
   res.set({
-    'Cache-Control': 'no-cache, no-store, must-revalidate',
-    Pragma: 'no-cache',
+    "Cache-Control": "no-cache, no-store, must-revalidate",
+    Pragma: "no-cache",
     Date: Date.now(),
   });
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 http.createServer(app).listen(port, () => {

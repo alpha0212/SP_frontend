@@ -31,7 +31,7 @@ export const InputElement = styled.input`
     border-color: #4cb050;
   }
   @media screen and (max-width: 40rem) {
-    width: 28rem;
+    width: 26rem;
     height: 5rem;
     font-size: 1.6rem;
   }
