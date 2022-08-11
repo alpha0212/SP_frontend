@@ -8,3 +8,6 @@ export * from "./FormInput";
 export * from "./AuthFormTemplate";
 export * from "./RegisterForm";
 export * from "./Footer";
+export * from "./TimeGraph";
+export * from "./MyPlanSideBar";
+export * from "./TitleText";
