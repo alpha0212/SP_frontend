@@ -11,3 +11,6 @@ export * from "./Footer";
 export * from "./TimeGraph";
 export * from "./MyPlanSideBar";
 export * from "./TitleText";
+export * from "./TimeInput";
+export * from "./TimeInputButton";
+export * from "./Habit";

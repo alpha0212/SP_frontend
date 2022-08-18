@@ -19,11 +19,6 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
   registerForm,
   onSubmit,
 }) => {
-  const submittest = () => {
-    axios.get("http://localhost:8000/register", {}).then(() => {
-      alert("Registered");
-    });
-  };
   return (
     <S.AuthFormTemplateContainer>
       <S.AuthFormTypeContainer formType="login">
@@ -34,9 +29,7 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
         {formType === "login" ? loginForm : registerForm}
         <S.ButtonContainer>
           {formType === "login" ? (
-            <Button onClick={submittest} style={{ marginTop: "2.5rem" }}>
-              로그인
-            </Button>
+            <Button style={{ marginTop: "2.5rem" }}>로그인</Button>
           ) : (
             <Button type="submit" style={{ marginTop: "2.5rem" }}>
               회원가입

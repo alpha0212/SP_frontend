@@ -9,18 +9,12 @@ export interface RegisterFormInputProps
 export const RegisterForm = React.forwardRef<
   HTMLInputElement,
   RegisterFormInputProps
->(({ label, placeholder, type, name, value, onChange }, ref) => (
+>(({ label, placeholder, type, name }, ref) => (
   <S.FormInputContainer ref={ref}>
     <S.Label>{label}</S.Label>
     <S.InputElementContainer>
       <S.InputContainer>
-        <S.InputElement
-          placeholder={placeholder}
-          type={type}
-          name={name}
-          value={value}
-          onChange={onChange}
-        />
+        <S.InputElement placeholder={placeholder} type={type} name={name} />
       </S.InputContainer>
     </S.InputElementContainer>
   </S.FormInputContainer>

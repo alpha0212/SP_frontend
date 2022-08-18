@@ -17,9 +17,6 @@ export const MyTimeData = styled.div`
   height: 7rem;
   border-bottom: 0.2rem solid #000000;
   background-color: #d9d9d9;
-  @media screen and (max-width: 700px) {
-    width: 30rem;
-  }
   @media screen and (max-width: 300px) {
     width: 20rem;
   }

@@ -12,13 +12,7 @@ export const FormInput = React.forwardRef<HTMLInputElement, FormInputProps>(
       <S.Label>{label}</S.Label>
       <S.InputElementContainer>
         <S.InputContainer>
-          <S.InputElement
-            placeholder={placeholder}
-            type={type}
-            name={name}
-            value={value}
-            onChange={onChange}
-          />
+          <S.InputElement placeholder={placeholder} type={type} name={name} />
         </S.InputContainer>
       </S.InputElementContainer>
     </S.FormInputContainer>

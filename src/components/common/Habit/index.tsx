@@ -8,7 +8,7 @@ import {
   TimeInput,
   TimeInputButton,
 } from "src/components";
-export const MyTime: React.FC = () => (
+export const Habit: React.FC = () => (
   <>
     <S.FlexContainer>
       <MyPlanSideBar />
