@@ -22,7 +22,6 @@ export const MyTime: React.FC = () => (
           <S.VerticalContainer>
             <S.Vertical />
           </S.VerticalContainer>
-          <TimeInputButton>제출하기</TimeInputButton>
         </S.TimeInputContainer>
       </S.MyTimeContainer>
     </S.FlexContainer>
