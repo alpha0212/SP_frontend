@@ -25,7 +25,7 @@ export const NavbarText = styled.div`
 
 export const NavbarFormGroup = styled.div`
   display: flex;
-  width: 100%;
+  width: 30rem;
   padding-bottom: 2rem;
   padding-left: 80vw;
 `;
@@ -47,8 +47,7 @@ export const NavbarLogout = styled(Link)`
 
 export const NavbarA = styled(Link)`
   font-size: 1.5rem;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  width: 10rem;
   text-decoration: none;
   color: black;
 `;

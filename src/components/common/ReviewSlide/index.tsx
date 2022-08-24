@@ -1,16 +1,18 @@
-import React from 'react';
-import Slider from 'react-slick';
+import React from "react";
+import Slider from "react-slick";
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import * as S from './styled';
+import * as S from "./styled";
 
 export const Review: React.FC = () => {
   const settings = {
-    autoplay: true,
+    autoplay: false,
     arrows: false,
-    slidesToShow: 3,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
     speed: 500,
   };
   return (
@@ -22,7 +24,8 @@ export const Review: React.FC = () => {
           🙋‍♀️경기학부모
           <br />
           <S.ReviewFont>
-            Im Soory 선생님을 만나면서 시험성적 평균이 올랐습니다. 그래서어쩌고저쩌고 쌸라쌸라뿡꾸
+            Im Soory 선생님을 만나면서 시험성적 평균이 올랐습니다.
+            그래서어쩌고저쩌고 쌸라쌸라뿡꾸
           </S.ReviewFont>
         </S.ReviewFontSide>
       </S.ReviewContent>
@@ -41,7 +44,9 @@ export const Review: React.FC = () => {
           <br />
           👨‍💼전북고1
           <br />
-          <S.ReviewFont>플래너하면서 제 공부 계획을 잘 관리할 수 있게 된거같아요.</S.ReviewFont>
+          <S.ReviewFont>
+            플래너하면서 제 공부 계획을 잘 관리할 수 있게 된거같아요.
+          </S.ReviewFont>
         </S.ReviewFontSide>
       </S.ReviewContent>
       <S.ReviewContent>

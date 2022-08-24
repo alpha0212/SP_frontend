@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -11,6 +10,7 @@ export interface AuthFormTemplateProps {
   loginForm: React.ReactNode;
   registerForm: React.ReactNode;
   onSubmit: React.FormEventHandler;
+  onClick: React.FormEventHandler;
 }
 
 export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
@@ -18,6 +18,7 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
   loginForm,
   registerForm,
   onSubmit,
+  onClick,
 }) => {
   return (
     <S.AuthFormTemplateContainer>
@@ -29,7 +30,13 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
         {formType === "login" ? loginForm : registerForm}
         <S.ButtonContainer>
           {formType === "login" ? (
-            <Button style={{ marginTop: "2.5rem" }}>로그인</Button>
+            <Button
+              onClick={onClick}
+              type="submit"
+              style={{ marginTop: "2.5rem" }}
+            >
+              로그인
+            </Button>
           ) : (
             <Button type="submit" style={{ marginTop: "2.5rem" }}>
               회원가입

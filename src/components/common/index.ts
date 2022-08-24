@@ -14,3 +14,4 @@ export * from "./TitleText";
 export * from "./TimeInput";
 export * from "./TimeInputButton";
 export * from "./Habit";
+export * from "./Intro";

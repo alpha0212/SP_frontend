@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const ReviewContainer = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ export const ReviewContainer = styled.div`
 `;
 
 export const ReviewContent = styled.div`
-  width: 35rem;
+  overflow: hidden;
   height: 10rem;
   background-color: #ffffff;
   border-radius: 1.5rem;
@@ -37,6 +37,7 @@ export const ReviewContent = styled.div`
 `;
 
 export const ReviewFontSide = styled.div`
+  overflow: hidden;
   font-size: 1.5rem;
   font-family: Pretendard;
   padding-left: 1rem;
