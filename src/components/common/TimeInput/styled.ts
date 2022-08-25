@@ -5,7 +5,7 @@ export const InputTimeContainer = styled.div`
   height: 3.8rem;
   display: flex;
   margin-top: 5rem;
-  background-color: #f2f2f2;
+  background-color: #fff;
 `;
 
 export const SelectOption = styled.select`

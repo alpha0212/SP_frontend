@@ -10,7 +10,7 @@ export const globalStyle = css`
     --color-primary-darker: #39933d;
 
     --color-border: #e2e3eb;
-    --color-background: #ffffff;
+    --color-background: #fcfcfc;
     --color-text-primary: #1d1c24;
     --color-text-secondary: #848894;
     --color-text-description: #6a6a6a;
