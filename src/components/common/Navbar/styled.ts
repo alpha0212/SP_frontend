@@ -2,13 +2,21 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 2;
   padding-top: 2.5rem;
+  color: white;
+  background: #f2f2f2;
+  font-weight: bold;
   display: flex;
-  justify-content: right;
-  align-items: right;
-  border-bottom: 0.1rem solid #c6c6c6;
+  justify-content: space-between;
+  align-items: center;
   font-family: Pretendard;
+  border-bottom: 0.1rem solid #c6c6c6;
 `;
 
 export const NavbarLogo = styled.img`

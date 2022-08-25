@@ -1,10 +1,27 @@
 import axios from "axios";
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState, createContext, useCallback } from "react";
 import { Button } from "../Button";
 
 import * as S from "./styled";
 
 export const Navbar = () => {
+  const [isScroll, setIsScroll] = useState(false);
+
+  const handleScroll = useCallback(() => {
+    if (window.pageYOffset > 0) {
+      setIsScroll(true);
+    }
+    if (window.pageYOffset === 0) {
+      setIsScroll(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousewheel', handleScroll);
+    return () => {
+      window.removeEventListener('mousewheel', handleScroll);
+    };
+  }, [handleScroll]);
   const [authState, setAuthState] = useState({
     user_name: "",
     id: 0,
@@ -39,8 +56,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <S.NavbarContainer>
-        <S.NavbarFormGroup>
+      <S.NavbarContainer isScroll={isScroll}>
+        <S.NavbarFormGroup isScroll={isScroll}>
           <AuthContext.Provider value={{ authState, setAuthState }}>
             {authState && (
               <>

@@ -15,15 +15,24 @@ export const MainFont = styled.div`
 
 export const MainFontContainer = styled.div`
   width: 100vw;
-  padding-bottom: 150vw;
+  padding-bottom: 100vw;
   @media screen and (max-width: 30rem) {
-    padding-bottom: 180vw;
+    padding-bottom: 120vw;
+  }
+
+  @media screen and (max-width: 92rem) {
+    padding-bottom: 150vw;
+  }
+
+  @media screen and (max-width: 60rem) {
+    padding-bottom: 100vw;
   }
 `;
 
 export const Background = styled.div`
   width: 100%;
   background-color: rgba(98, 129, 224);
+  padding-top: 4rem;
 `;
 
 export const LineLogo = styled.img`
@@ -59,17 +68,17 @@ export const leftBoxContainer = styled.div`
   }
 `;
 export const leftBox = styled.div`
-  width: 65%;
+  width: 55%;
   padding-top: 6rem;
   position: relative;
   float: left;
   @media screen and (max-width: 100rem) {
-    width: 75%;
+    width: 55%;
   }
   @media screen and (max-width: 50rem) {
     padding-top: 1rem;
   }
-  border-radius: 0rem 20rem 20rem 0rem;
+  border-radius: 2rem;
   background-color: rgba(176, 192, 239);
 `;
 
@@ -101,17 +110,17 @@ export const rightBoxContainer = styled.div`
   }
 `;
 export const rightBox = styled.div`
-  width: 65%;
+  width: 55%;
   padding-top: 6rem;
   position: relative;
   float: right;
   @media screen and (max-width: 100rem) {
-    width: 75%;
+    width: 55%;
   }
   @media screen and (max-width: 50rem) {
     padding-top: 1rem;
   }
-  border-radius: 20rem 0rem 0rem 20rem;
+  border-radius: 2rem;
   background-color: rgba(79, 103, 179);
 `;
 
