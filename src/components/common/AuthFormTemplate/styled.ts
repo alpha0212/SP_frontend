@@ -39,10 +39,8 @@ export const AuthFormTypeContainer = styled.div<{
   }
 `;
 
-export const AuthForm = styled.form`
+export const AuthForm = styled.div`
   padding: 2rem;
-  & > div:not(:last-child) {
-  }
 `;
 
 export const ButtonContainer = styled.div`

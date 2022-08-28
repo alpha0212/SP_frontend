@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState, createContext, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { AuthContext } from "src/helper/AuthContext";
-import { Button } from "../Button";
 
 import * as S from "./styled";
 
@@ -39,7 +38,7 @@ const logout = () => {
   return (
     <>
       <S.NavbarContainer>
-        <AuthContext.Provider value={{authState, setAuthState}}>
+        <AuthContext.Provider value={{ authState, setAuthState }}>
           <S.NavbarFormGroup>
                 {!authState.status ? (
                   <>

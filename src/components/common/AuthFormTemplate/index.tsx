@@ -9,7 +9,6 @@ export interface AuthFormTemplateProps {
   formType: "login" | "register";
   loginForm: React.ReactNode;
   registerForm: React.ReactNode;
-  onSubmit: React.FormEventHandler;
   onClick: React.FormEventHandler;
 }
 
@@ -17,7 +16,6 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
   formType,
   loginForm,
   registerForm,
-  onSubmit,
   onClick,
 }) => {
   return (
@@ -26,7 +24,7 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
         <NavLink to="/auth/login">로그인</NavLink>
         <NavLink to="/auth/register">회원가입</NavLink>
       </S.AuthFormTypeContainer>
-      <S.AuthForm onSubmit={onSubmit}>
+      <S.AuthForm>
         {formType === "login" ? loginForm : registerForm}
         <S.ButtonContainer>
           {formType === "login" ? (

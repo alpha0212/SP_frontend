@@ -16,12 +16,6 @@ export const AuthPage = () => {
   const [user_pw, setUser_pw] = useState("");
   const { setAuthState } = useContext(AuthContext);
 
-  const onSubmit = (data) => {
-    axios.post("http://localhost:8000/auth", data).then(() => {
-      console.log(data);
-      navigate("/");
-    });
-  };
   const login = () => {
     const data = { user_id: user_id, user_pw: user_pw };
     axios.post("http://localhost:8000/auth/login", data).then((response) => {
@@ -45,57 +39,14 @@ export const AuthPage = () => {
         formType={formType}
         loginForm={
           <>
-            <FormInput
-              placeholder="아이디를 입력해주세요."
-              type="text"
-              onChange={(event) => {
-                setUser_id(event.target.value);
-              }}
-            />
-            <FormInput
-              placeholder="비밀번호를 입력해주세요."
-              type="password"
-              onChange={(event) => {
-                setUser_pw(event.target.value);
-              }}
-            />
+            <FormInput />
           </>
         }
         registerForm={
           <>
-            <RegisterForm
-              label="이름"
-              placeholder="이름을 입력해주세요."
-              type="text"
-              name="user_name"
-            />
-            <RegisterForm
-              label="이메일"
-              placeholder="이메일을 입력해주세요. (선택, 광고수신)"
-              type="email"
-              name="user_email"
-            />
-            <RegisterForm
-              label="아이디"
-              placeholder="아이디 입력해주세요."
-              type="text"
-              name="user_id"
-            />
-            <RegisterForm
-              label="비밀번호"
-              placeholder="비밀번호 입력해주세요."
-              type="password"
-              name="user_pw"
-            />
-            <RegisterForm
-              label="비밀번호 확인"
-              placeholder="비밀번호 입력해주세요."
-              type="password"
-              name="user_ch_pw"
-            />
+            <RegisterForm />
           </>
         }
-        onSubmit={onSubmit}
       />
     </S.AuthPageFormContainer>
   );
