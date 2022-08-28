@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Navbar, Review, Footer, Intro } from "src/components";
 
 import * as S from "./styled";

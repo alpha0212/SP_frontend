@@ -33,9 +33,21 @@ export const NavbarText = styled.div`
 
 export const NavbarFormGroup = styled.div`
   display: flex;
-  width: 30rem;
+  width: 100%;
   padding-bottom: 2rem;
   padding-left: 80vw;
+  @media screen and (max-width: 76rem) {
+    padding-left: 70vw;
+  }
+  @media screen and (max-width: 57rem) {
+    padding-left: 68vw;
+  }
+  @media screen and (max-width: 40rem) {
+    padding-left: 60vw;
+  }
+  @media screen and (max-width: 32rem) {
+    padding-left: 58vw;
+  }
 `;
 
 export const NavbarMyPlanContainer = styled.div`
@@ -55,9 +67,16 @@ export const NavbarLogout = styled(Link)`
 
 export const NavbarA = styled(Link)`
   font-size: 1.5rem;
-  width: 10rem;
+  margin-left: 2vw;
+  margin-right: 2vw;
   text-decoration: none;
   color: black;
+  @media screen and (max-width: 76rem) {
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
 `;
+
+export const NavbarAContainer = styled.div``;
 
 export const loggedInContainer = styled.div``;

@@ -5,35 +5,36 @@ import { AuthContext } from "src/helper/AuthContext";
 import * as S from "./styled";
 
 export const Navbar = () => {
-const [authState, setAuthState] = useState({
-  user_id: "",
-  id: 0,
-  status: false,
-});
-
-useEffect(() => {
-  axios.get("http://localhost:8000/auth/auth", {
-    headers: {
-      accessToken: localStorage.getItem("accessToken"),
-    },
-  })
-  .then((response) => {
-    if(response.data.error) {
-      setAuthState({ ...authState, status: false});
-    } else {
-      setAuthState({
-        user_id: response.data.user_id,
-        id: response.data.id,
-        status: true,
-      });
-    }
+  const [authState, setAuthState] = useState({
+    user_id: "",
+    id: 0,
+    status: false,
   });
-}, []);
 
-const logout = () => {
-  localStorage.removeItem("accessToken");
-  setAuthState({ user_id: "", id: 0, status: false});
-}
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/auth/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
+      .then((response) => {
+        if (response.data.error) {
+          setAuthState({ ...authState, status: false });
+        } else {
+          setAuthState({
+            user_id: response.data.user_id,
+            id: response.data.id,
+            status: true,
+          });
+        }
+      });
+  }, []);
+
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState({ user_id: "", id: 0, status: false });
+  };
 
   return (
     <>
