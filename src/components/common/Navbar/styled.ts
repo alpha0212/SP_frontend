@@ -59,3 +59,5 @@ export const NavbarA = styled(Link)`
   text-decoration: none;
   color: black;
 `;
+
+export const loggedInContainer = styled.div``;

@@ -27,6 +27,9 @@ export const MainFontContainer = styled.div`
   @media screen and (max-width: 60rem) {
     padding-bottom: 100vw;
   }
+  @media screen and (max-width: 150rem) {
+    padding-bottom: 110vw;
+  }
 `;
 
 export const Background = styled.div`

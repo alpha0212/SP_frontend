@@ -1,73 +1,60 @@
 import axios from "axios";
 import React, { useEffect, useState, createContext, useCallback } from "react";
+import { AuthContext } from "src/helper/AuthContext";
 import { Button } from "../Button";
 
 import * as S from "./styled";
 
 export const Navbar = () => {
-  const [isScroll, setIsScroll] = useState(false);
+const [authState, setAuthState] = useState({
+  user_id: "",
+  id: 0,
+  status: false,
+});
 
-  const handleScroll = useCallback(() => {
-    if (window.pageYOffset > 0) {
-      setIsScroll(true);
-    }
-    if (window.pageYOffset === 0) {
-      setIsScroll(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('mousewheel', handleScroll);
-    return () => {
-      window.removeEventListener('mousewheel', handleScroll);
-    };
-  }, [handleScroll]);
-  const [authState, setAuthState] = useState({
-    user_name: "",
-    id: 0,
-    status: false,
-  });
-  const AuthContext = createContext({ authState, setAuthState });
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8000/auth/auth", {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
-      .then((response) => {
-        if (response.data.error) {
-          setAuthState({ ...authState, status: false });
-        } else {
-          setAuthState({
-            user_name: response.data.user_name,
-            id: response.data.id,
-            status: true,
-          });
-        }
+useEffect(() => {
+  axios.get("http://localhost:8000/auth/auth", {
+    headers: {
+      accessToken: localStorage.getItem("accessToken"),
+    },
+  })
+  .then((response) => {
+    if(response.data.error) {
+      setAuthState({ ...authState, status: false});
+    } else {
+      setAuthState({
+        user_id: response.data.user_id,
+        id: response.data.id,
+        status: true,
       });
-  }, []);
+    }
+  });
+}, []);
 
-  const logout = () => {
-    localStorage.removeItem("accessToken");
-    setAuthState({ user_name: "", id: 0, status: false });
-  };
+const logout = () => {
+  localStorage.removeItem("accessToken");
+  setAuthState({ user_id: "", id: 0, status: false});
+}
 
   return (
     <>
-      <S.NavbarContainer isScroll={isScroll}>
-        <S.NavbarFormGroup isScroll={isScroll}>
-          <AuthContext.Provider value={{ authState, setAuthState }}>
-            {authState && (
-              <>
-                <S.NavbarA to="time/mytime">My시간</S.NavbarA>
-                <S.NavbarA to="auth/login">로그인</S.NavbarA>
-                <S.NavbarA to="auth/register">회원가입</S.NavbarA>
-              </>
-            )}
-          </AuthContext.Provider>
-        </S.NavbarFormGroup>
+      <S.NavbarContainer>
+        <AuthContext.Provider value={{authState, setAuthState}}>
+          <S.NavbarFormGroup>
+                {!authState.status ? (
+                  <>
+                    <S.NavbarA to="auth/login">로그인</S.NavbarA>
+                    <S.NavbarA to="auth/register">회원가입</S.NavbarA>
+                  </>
+                ) : (
+                  <>
+                    <S.NavbarA to="time/mytime">My시간</S.NavbarA>  
+                  </>
+                )}
+                <h1>{authState.user_name}</h1>
+                {authState.status && <button onClick={logout}>Logout</button>}
+          </S.NavbarFormGroup>
+        </AuthContext.Provider>
       </S.NavbarContainer>
     </>
   );

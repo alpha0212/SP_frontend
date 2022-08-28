@@ -1,20 +1,20 @@
-import { Global } from '@emotion/react';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { Global } from "@emotion/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-import { App } from 'src/App';
-import reportWebVitals from 'src/reportWebVitals';
-import { globalStyle } from 'src/styles';
+import { App } from "src/App";
+import reportWebVitals from "src/reportWebVitals";
+import { globalStyle } from "src/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Global styles={globalStyle} />
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
