@@ -9,14 +9,12 @@ export interface AuthFormTemplateProps {
   formType: "login" | "register";
   loginForm: React.ReactNode;
   registerForm: React.ReactNode;
-  onClick: React.FormEventHandler;
 }
 
 export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
   formType,
   loginForm,
   registerForm,
-  onClick,
 }) => {
   return (
     <S.AuthFormTemplateContainer>
@@ -28,11 +26,7 @@ export const AuthFormTemplate: React.FC<AuthFormTemplateProps> = ({
         {formType === "login" ? loginForm : registerForm}
         <S.ButtonContainer>
           {formType === "login" ? (
-            <Button
-              onClick={onClick}
-              type="submit"
-              style={{ marginTop: "2.5rem" }}
-            >
+            <Button type="submit" style={{ marginTop: "2.5rem" }}>
               로그인
             </Button>
           ) : (

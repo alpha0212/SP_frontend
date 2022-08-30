@@ -1,13 +1,7 @@
 import React from "react";
 
 import * as S from "./styled";
-import {
-  TimeGraph,
-  MyPlanSideBar,
-  TitleText,
-  TimeInput,
-  TimeInputButton,
-} from "src/components";
+import { TimeGraph, MyPlanSideBar, TitleText, TimeInput } from "src/components";
 export const MyTime: React.FC = () => (
   <>
     <S.FlexContainer>

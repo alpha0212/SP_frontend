@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/auth/auth", {
+      .get("http://localhost:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
