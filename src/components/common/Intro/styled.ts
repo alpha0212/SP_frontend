@@ -38,16 +38,11 @@ export const Background = styled.div`
   padding-top: 4rem;
 `;
 
-export const LineLogo = styled.img`
-  width: 100%;
-  padding-top: 10rem;
-`;
-
 export const description = styled.div`
   font-size: 1.2rem;
   font-weight: 0.5rem;
   color: white;
-  padding-top: 1rem;
+  padding-top: 10rem;
 `;
 
 export const text1 = styled.div`

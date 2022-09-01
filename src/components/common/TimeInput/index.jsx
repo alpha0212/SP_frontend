@@ -44,6 +44,7 @@ export const TimeInput = () => {
       })
       .then((response) => {
         alert("Success!");
+        console.log(response);
       });
   };
   return (

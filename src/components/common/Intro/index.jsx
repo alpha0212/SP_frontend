@@ -18,7 +18,6 @@ export const Intro = () => {
       <S.MainContainer>
         <S.MainFontContainer>
           <S.MainFont>SkyPlanner</S.MainFont>
-          <S.LineLogo src={logo} />
           <S.description {...animatedItem[0]}>
             <S.text1>스카이 플래너는 SKY대학생들에게</S.text1>
             <S.text1>공부하는 방법과 공부계획수립 방법을 전수받고</S.text1>

@@ -9,12 +9,10 @@ import { globalStyle } from "src/styles";
 
 const root = ReactDOM.createRoot(document.getElementById("app") as HTMLElement);
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Global styles={globalStyle} />
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <Global styles={globalStyle} />
+    <App />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
