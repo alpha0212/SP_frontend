@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -9,7 +9,6 @@ import * as S from "./styled";
 
 export const TimeInput = () => {
   const { authState } = useContext(AuthContext);
-
   const navigate = useNavigate();
   const initialValues = {
     kor: "",
@@ -20,7 +19,6 @@ export const TimeInput = () => {
     kh: "",
     study: "",
   };
-
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/auth/login");
@@ -43,8 +41,7 @@ export const TimeInput = () => {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        alert("Success!");
-        console.log(response);
+        alert("Success");
       });
   };
   return (

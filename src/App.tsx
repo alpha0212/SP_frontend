@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { MyTime, TimeData, Habit } from "./components";
+import { MyTime, TimeData, Habit, Profile } from "./components";
 import { MainPage } from "./pages";
 import { AuthPage } from "./pages/auth";
 
@@ -19,6 +19,7 @@ export const App: React.FC = () => {
         <Route path="login" element={<AuthPage />} />
         <Route path="register" element={<AuthPage />} />
       </Route>
+      <Route path="profile/:id" element={<Profile />} />
     </Routes>
   );
 };

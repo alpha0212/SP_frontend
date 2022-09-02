@@ -6,7 +6,7 @@ import * as S from "./styled";
 
 export const Navbar = () => {
   const [authState, setAuthState] = useState({
-    user_id: "",
+    user_name: "",
     id: 0,
     status: false,
   });
@@ -23,7 +23,7 @@ export const Navbar = () => {
           setAuthState({ ...authState, status: false });
         } else {
           setAuthState({
-            user_id: response.data.user_id,
+            user_name: response.data.user_name,
             id: response.data.id,
             status: true,
           });
@@ -33,7 +33,7 @@ export const Navbar = () => {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
-    setAuthState({ user_id: "", id: 0, status: false });
+    setAuthState({ user_name: "", id: 0, status: false });
   };
 
   return (
@@ -49,9 +49,9 @@ export const Navbar = () => {
                 ) : (
                   <>
                     <S.NavbarA to="time/mytime">My시간</S.NavbarA>  
+                    <div style={{color: "black"}}>{authState.user_name}</div>
                   </>
                 )}
-                <h1>{authState.user_name}</h1>
                 {authState.status && <button onClick={logout}>Logout</button>}
           </S.NavbarFormGroup>
         </AuthContext.Provider>
