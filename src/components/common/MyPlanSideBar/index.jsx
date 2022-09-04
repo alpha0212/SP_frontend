@@ -6,7 +6,6 @@ import * as S from "./styled";
 export const MyPlanSideBar = () => {
   const [authState, setAuthState] = useState({
     user_name: "",
-    id: 0,
     status: false,
   });
 
@@ -22,8 +21,7 @@ export const MyPlanSideBar = () => {
           setAuthState({ ...authState, status: false });
         } else {
           setAuthState({
-            user_name: response.data.user_name,
-            id: response.data.id,
+            user_name: response.data.user_id,
             status: true,
           });
         }
@@ -31,8 +29,7 @@ export const MyPlanSideBar = () => {
   }, []);
   return (
     <S.MyTimeDataContainer>
-      <AuthContext.Provider value={{ authState, setAuthState}}>
-        <S.MyPlanText>{authState.user_name}</S.MyPlanText>
+      <S.MyPlanText>{authState.user_name} 님</S.MyPlanText>
         <S.SelectMy>
           <S.SelectMyList>
             <S.SelectMyListText to="">오늘의 공부</S.SelectMyListText>
@@ -44,7 +41,6 @@ export const MyPlanSideBar = () => {
             <S.SelectMyListText to="mygoal">나의 목표</S.SelectMyListText>
           </S.SelectMyList>
         </S.SelectMy>
-      </AuthContext.Provider>
     </S.MyTimeDataContainer>
   );
 };

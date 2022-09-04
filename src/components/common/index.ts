@@ -1,6 +1,5 @@
 export * from "./Navbar";
 export * from "./ReviewSlide";
-export * from "./WriteTime";
 export * from "./MyTime";
 export * from "./TimeData";
 export * from "./Button";

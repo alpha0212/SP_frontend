@@ -7,7 +7,6 @@ import * as S from "./styled";
 export const Navbar = () => {
   const [authState, setAuthState] = useState({
     user_name: "",
-    id: 0,
     status: false,
   });
 
@@ -23,8 +22,7 @@ export const Navbar = () => {
           setAuthState({ ...authState, status: false });
         } else {
           setAuthState({
-            user_name: response.data.user_name,
-            id: response.data.id,
+            user_name: response.data.user_id,
             status: true,
           });
         }
@@ -33,7 +31,7 @@ export const Navbar = () => {
 
   const logout = () => {
     localStorage.removeItem("accessToken");
-    setAuthState({ user_name: "", id: 0, status: false });
+    setAuthState({ user_name: "", status: false });
   };
 
   return (

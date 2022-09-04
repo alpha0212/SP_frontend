@@ -13,7 +13,6 @@ export const RegisterForm = React.forwardRef<
 >(({ autoComplete, placeholder, type, name }, ref) => {
   const initialValues = {
     user_name: "",
-    user_email: "",
     user_id: "",
     user_pw: "",
   };
@@ -22,7 +21,6 @@ export const RegisterForm = React.forwardRef<
 
   const validationSchema = Yup.object().shape({
     user_name: Yup.string().required(),
-    user_email: Yup.string().required(),
     user_id: Yup.string().required(),
     user_pw: Yup.string().required(),
   });
@@ -50,25 +48,20 @@ export const RegisterForm = React.forwardRef<
             validationSchema={validationSchema}
           >
             <Form>
+              <Field autoComplete="off" name="user_id" placeholder="이름" />
               <Field
                 type="text"
                 autoComplete="off"
                 name="user_name"
-                placeholder="이름"
+                placeholder="id"
               />
-              <Field
-                type="email"
-                autoComplete="off"
-                name="user_email"
-                placeholder="email"
-              />
-              <Field autoComplete="off" name="user_id" placeholder="id" />
               <Field
                 autoComplete="off"
                 name="user_pw"
                 placeholder="pw"
                 type="password"
               />
+
               <button type="submit">회원가입</button>
             </Form>
           </Formik>
