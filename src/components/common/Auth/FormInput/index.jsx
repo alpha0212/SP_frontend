@@ -7,7 +7,7 @@ import * as S from "./styled";
 export const FormInput = () => {
   const [user_id, setUserid] = useState("");
   const [user_pw, setUserpw] = useState("");
-  const { setAuthState } = useContext(AuthContext);
+  const {setAuthState} = useContext(AuthContext);
 
   const navigate = useNavigate();
 

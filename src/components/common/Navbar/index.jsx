@@ -28,7 +28,7 @@ export const Navbar = () => {
         }
       });
   }, []);
-
+  const TeacherList = "NvNXPf8d";
   const logout = () => {
     localStorage.removeItem("accessToken");
     setAuthState({ user_name: "", status: false });
@@ -46,11 +46,12 @@ export const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <S.NavbarA to="time/mytime">My시간</S.NavbarA>  
-                    <div style={{color: "black"}}>{authState.user_name}</div>
+                    {authState.user_name === TeacherList ? <></> : <S.NavbarA to="time/mytime">My시간</S.NavbarA>}
+                    {authState.user_name === TeacherList ? <></> : <div style={{color: "black"}}>{authState.user_name}</div>}
+                    {authState.user_name === TeacherList ? <S.NavbarA to="st/list"><S.TextSet>학생관리</S.TextSet></S.NavbarA> : <></>}
                   </>
                 )}
-                {authState.status && <button onClick={logout}>Logout</button>}
+                {authState.status && <S.Logout onClick={logout}>Logout</S.Logout>}
           </S.NavbarFormGroup>
         </AuthContext.Provider>
       </S.NavbarContainer>

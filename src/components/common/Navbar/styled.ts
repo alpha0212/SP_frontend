@@ -80,3 +80,12 @@ export const NavbarA = styled(Link)`
 export const NavbarAContainer = styled.div``;
 
 export const loggedInContainer = styled.div``;
+
+export const TextSet = styled.div`
+  margin-top: 0.4rem;
+`;
+
+export const Logout = styled.button`
+  border: none;
+  font-weight: 700;
+`;

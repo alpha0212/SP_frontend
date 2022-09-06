@@ -13,9 +13,10 @@ export const AuthFormTypeContainer = styled.div<{
 }>`
   display: flex;
   background-color: #ffffff;
+  width: 41rem;
+  margin-left: 0.9rem;
 
   & > a {
-    margin: 0rem 1rem 0rem 1rem;
     border: 1rem;
     flex: 1 1 auto;
     color: #afafaf;
