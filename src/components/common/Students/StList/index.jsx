@@ -31,7 +31,7 @@ export const StList = () => {
             )
           } else {
             return (
-              <S.StName to={`/profile/${value.UserId}`}><S.List key={key}><S.StText>{value.user_id}</S.StText></S.List></S.StName>
+              <S.List key={key}><S.StName to={`/profile/${value.id}`}><S.StText>{value.user_id}</S.StText></S.StName></S.List>
               );
           }
       })}

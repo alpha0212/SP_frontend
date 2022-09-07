@@ -29,7 +29,7 @@ export const Profile = () => {
           <div key={key}>
             <div onClick={() => {
               navigate(`/todaytime/${value.id}`);
-            }}></div>
+            }}>ad</div>
           </div>
         )
       })}
