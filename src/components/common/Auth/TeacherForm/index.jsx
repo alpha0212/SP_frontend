@@ -15,7 +15,7 @@ export const TeacherForm = () => {
 
     const login = () => {
         const data = { t_id: t_id, t_pw: t_pw, t_job: t_job };
-        axios.post("http://localhost:8080/auth/teacher", data).then((response) => {
+        axios.post("http://localhost:8080/teacher/login", data).then((response) => {
             if(response.data.error) {
                 alert(response.data.error);
             } else {
@@ -61,7 +61,7 @@ export const TeacherForm = () => {
               <S.InputElement
                 type="text"
                 onChange={(event) => {
-                  setTpw(event.target.value);
+                  setTjob(event.target.value);
                 }}
               />
               <S.TeacherButton onClick={login}>로그인</S.TeacherButton>
