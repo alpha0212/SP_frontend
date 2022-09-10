@@ -26,4 +26,7 @@ export const StText = styled.div`
   margin-top: 1.8rem;
 `;
 
-export const StName = styled(Link)``;
+export const StName = styled(Link)`
+  text-decoration: none;
+  color: #323232;
+`;
