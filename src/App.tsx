@@ -5,6 +5,7 @@ import { MyTime, TimeData, Habit, Profile } from "./components";
 import { StList } from "src/components";
 import { MainPage } from "./pages";
 import { AuthPage } from "./pages/auth";
+import { TeacherForm } from "src/components";
 
 export const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
       <Route path="auth">
         <Route path="login" element={<AuthPage />} />
         <Route path="register" element={<AuthPage />} />
+        <Route path="teacher" element={<TeacherForm />} />
       </Route>
       <Route path="profile/:id" element={<Profile />} />
       <Route path="st">

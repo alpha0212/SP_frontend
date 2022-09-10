@@ -9,6 +9,11 @@ export const Navbar = () => {
     user_name: "",
     status: false,
   });
+  
+  const [teaState, setTeaState] = useState({
+    t_job: "",
+    status: false,
+  })
 
   useEffect(() => {
     axios
@@ -20,11 +25,16 @@ export const Navbar = () => {
       .then((response) => {
         if (response.data.error) {
           setAuthState({ ...authState, status: false });
+          setTeaState({ ...teaState, status: false });
         } else {
           setAuthState({
             user_name: response.data.user_id,
             status: true,
           });
+          setTeaState({
+            t_job: response.data.t_job,
+            status: true,
+          })
         }
       });
   }, []);
@@ -32,12 +42,13 @@ export const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("accessToken");
     setAuthState({ user_name: "", status: false });
+    setTeaState({ t_job: "", status: false });
   };
 
   return (
     <>
       <S.NavbarContainer>
-        <AuthContext.Provider value={{ authState, setAuthState }}>
+        <AuthContext.Provider value={{ authState, setAuthState, teaState, setTeaState }}>
           <S.NavbarFormGroup>
                 {!authState.status ? (
                   <>
@@ -48,7 +59,7 @@ export const Navbar = () => {
                   <>
                     {authState.user_name === TeacherList ? <></> : <S.NavbarA to="time/mytime">My시간</S.NavbarA>}
                     {authState.user_name === TeacherList ? <></> : <div style={{color: "black"}}>{authState.user_name}</div>}
-                    {authState.user_name === TeacherList ? <S.NavbarA to="st/list"><S.TextSet>학생관리</S.TextSet></S.NavbarA> : <></>}
+                    {teaState.t_job === "teacher" ? <S.NavbarA to="st/list"><S.TextSet>학생관리</S.TextSet></S.NavbarA> : <></>}
                   </>
                 )}
                 {authState.status && <S.Logout onClick={logout}>Logout</S.Logout>}

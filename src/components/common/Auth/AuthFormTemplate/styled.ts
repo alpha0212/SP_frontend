@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const AuthFormTemplateContainer = styled.div`
   width: 43rem;
   border-radius: 1.2rem;
+  background-color: #fcfcfc;
   @media screen and (max-width: 52rem) {
     width: 35rem;
   }
@@ -12,7 +13,7 @@ export const AuthFormTypeContainer = styled.div<{
   formType: "login" | "register";
 }>`
   display: flex;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   width: 41rem;
   margin-left: 0.9rem;
 
@@ -25,7 +26,7 @@ export const AuthFormTypeContainer = styled.div<{
     text-decoration: none;
     text-align: center;
     padding: 1.7rem;
-    background-color: #ffffff;
+    background-color: #fcfcfc;
     border-bottom: solid 0.5rem #afafaf;
     transition: all 200ms;
     @media screen and (max-width: 40rem) {
