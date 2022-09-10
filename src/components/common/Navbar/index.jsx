@@ -44,6 +44,7 @@ export const Navbar = () => {
     setAuthState({ user_name: "", status: false });
     setTeaState({ t_job: "", status: false });
   };
+  console.log(teaState.t_job);
 
   return (
     <>
@@ -57,7 +58,7 @@ export const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    {authState.user_name === TeacherList ? <></> : <S.NavbarA to="time/mytime">My시간</S.NavbarA>}
+                    {teaState.t_job === "teacher" ? <></> : <S.NavbarA to="time/mytime">My시간</S.NavbarA>}
                     {authState.user_name === TeacherList ? <></> : <div style={{color: "black"}}>{authState.user_name}</div>}
                     {teaState.t_job === "teacher" ? <S.NavbarA to="st/list"><S.TextSet>학생관리</S.TextSet></S.NavbarA> : <></>}
                   </>
