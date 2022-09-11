@@ -11,6 +11,7 @@ export const Profile = () => {
   const [listOfPosts, setListOfPosts] = useState([]);
   const { authState } = useContext(AuthContext);
 
+
   useEffect(() => {
     axios.get(`http://localhost:8080/auth/basicinfo/${id}`).then((response) => {
       setUser_name(response.data.user_id);
@@ -26,11 +27,9 @@ export const Profile = () => {
     <div>
       {listOfPosts.map((value, key) => {
         return (
-          <div key={key}>
-            <div onClick={() => {
-              navigate(`/todaytime/${value.id}`);
-            }}>ad</div>
-          </div>
+          <S.DayContainer key={key}>
+            <S.DayTime>날짜: {value.createdAt.slice(0,10)}</S.DayTime>
+          </S.DayContainer>
         )
       })}
     </div>
