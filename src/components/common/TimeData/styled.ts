@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const TimeDataContainer = styled.div`
   font-family: Pretendard;
@@ -27,4 +27,10 @@ export const TimeDataBox = styled.div`
   border-radius: 2rem;
   margin-bottom: 2rem;
   background-color: #d9d9d9;
+`;
+
+export const TimeDataText = styled.div`
+  margin-left: 3rem;
+  padding-top: 3rem;
+  font-size: 3rem;
 `;

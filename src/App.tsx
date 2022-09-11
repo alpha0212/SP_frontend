@@ -15,8 +15,8 @@ export const App: React.FC = () => {
         <Route path="mytime" element={<MyTime />}>
           <Route path="habit" element={<Habit />} />
         </Route>
-        <Route path="timedata" element={<TimeData />} />
       </Route>
+      <Route path="timedata/:id" element={<TimeData />} />
       <Route path="auth">
         <Route path="login" element={<AuthPage />} />
         <Route path="register" element={<AuthPage />} />

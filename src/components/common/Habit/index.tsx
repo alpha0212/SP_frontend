@@ -2,7 +2,6 @@ import React from "react";
 
 import * as S from "./styled";
 import {
-  TimeGraph,
   MyPlanSideBar,
   TitleText,
   TimeInput,
@@ -14,9 +13,7 @@ export const Habit: React.FC = () => (
       <MyPlanSideBar />
       <S.MyTimeContainer>
         <TitleText />
-        <S.TimeGraphContainer>
-          <TimeGraph />
-        </S.TimeGraphContainer>
+        <S.TimeGraphContainer></S.TimeGraphContainer>
         <S.TimeInputContainer>
           <TimeInput />
           <S.VerticalContainer>
