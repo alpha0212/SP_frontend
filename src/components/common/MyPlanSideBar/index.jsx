@@ -11,7 +11,7 @@ export const MyPlanSideBar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/auth/auth", {
+      .get("http://13.125.182.60:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -30,17 +30,17 @@ export const MyPlanSideBar = () => {
   return (
     <S.MyTimeDataContainer>
       <S.MyPlanText>{authState.user_name} 님</S.MyPlanText>
-        <S.SelectMy>
-          <S.SelectMyList>
-            <S.SelectMyListText to="">오늘의 공부</S.SelectMyListText>
-          </S.SelectMyList>
-          <S.SelectMyList>
-            <S.SelectMyListText to="habit">습관 관리</S.SelectMyListText>
-          </S.SelectMyList>
-          <S.SelectMyList>
-            <S.SelectMyListText to="mygoal">나의 목표</S.SelectMyListText>
-          </S.SelectMyList>
-        </S.SelectMy>
+      <S.SelectMy>
+        <S.SelectMyList>
+          <S.SelectMyListText to="">오늘의 공부</S.SelectMyListText>
+        </S.SelectMyList>
+        <S.SelectMyList>
+          <S.SelectMyListText to="habit">습관 관리</S.SelectMyListText>
+        </S.SelectMyList>
+        <S.SelectMyList>
+          <S.SelectMyListText to="mygoal">나의 목표</S.SelectMyListText>
+        </S.SelectMyList>
+      </S.SelectMy>
     </S.MyTimeDataContainer>
   );
 };
