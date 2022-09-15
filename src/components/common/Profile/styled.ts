@@ -9,10 +9,10 @@ export const listOfPosts = styled.div``;
 export const DayContainer = styled.div`
   justify-content: center;
   width: 20rem;
-  margin-left: 40%;
   border: 0.2rem solid #323232;
   border-radius: 1.2rem;
-  margin-top: 3rem;
+  margin: auto;
+  margin-top: 4rem;
 `;
 
 export const DayTime = styled.div`

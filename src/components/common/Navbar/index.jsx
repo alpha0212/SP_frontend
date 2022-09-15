@@ -72,7 +72,7 @@ export const Navbar = () => {
                   <></>
                 ) : (
                   <Link
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", marginRight: "2vw" }}
                     to={`/profile/${authState.id}`}
                   >
                     <div style={{ color: "black" }}>{authState.user_name}</div>

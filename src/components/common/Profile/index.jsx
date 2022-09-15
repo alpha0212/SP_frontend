@@ -17,7 +17,7 @@ export const Profile = () => {
       .then((response) => {
         setListOfPosts(response.data);
       });
-    axios.get(`http://localhost:8080/auth/basicinfo/${id}`).then((response) => {
+    axios.get(`http://localhost:8080/byuserId/${id}`).then((response) => {
       setUser(response.data.id);
     });
   }, []);

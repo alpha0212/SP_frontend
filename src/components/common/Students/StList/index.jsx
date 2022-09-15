@@ -26,17 +26,13 @@ export const StList = () => {
     <S.Container>
       <S.ListContainer>
         {listOfUsers.map((value, key) => {
-          if (value === null) {
-            return <S.StText>아무도 제출하지 않았습니다.</S.StText>;
-          } else {
-            return (
-              <S.List key={key}>
-                <S.StName to={`/profile/${value.id}`}>
-                  <S.StText>{value.user_id}</S.StText>
-                </S.StName>
-              </S.List>
-            );
-          }
+          return (
+            <S.List key={key}>
+              <S.StName to={`/profile/${value.id}`}>
+                <S.StText>{value.user_id}</S.StText>
+              </S.StName>
+            </S.List>
+          );
         })}
       </S.ListContainer>
     </S.Container>

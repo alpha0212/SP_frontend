@@ -46,7 +46,7 @@ export const NavbarFormGroup = styled.div`
     padding-left: 60vw;
   }
   @media screen and (max-width: 32rem) {
-    padding-left: 58vw;
+    padding-left: 50vw;
   }
 `;
 
