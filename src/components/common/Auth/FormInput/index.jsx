@@ -13,21 +13,19 @@ export const FormInput = () => {
 
   const login = () => {
     const data = { user_id: user_id, user_pw: user_pw };
-    axios
-      .post("http://13.125.182.60:8080/auth/login", data)
-      .then((response) => {
-        if (response.data.error) {
-          alert(response.data.error);
-        } else {
-          navigate("/");
-          localStorage.setItem("accessToken", response.data.token);
-          setAuthState({
-            user_id: response.data.user_id,
-            id: response.data.id,
-            status: false,
-          });
-        }
-      });
+    axios.post("http://localhost:8080/auth/login", data).then((response) => {
+      if (response.data.error) {
+        alert(response.data.error);
+      } else {
+        navigate("/");
+        localStorage.setItem("accessToken", response.data.token);
+        setAuthState({
+          user_id: response.data.user_id,
+          id: response.data.id,
+          status: false,
+        });
+      }
+    });
   };
   useEffect(() => {
     if (localStorage.getItem("accessToken")) {

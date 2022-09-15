@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "src/helper/AuthContext";
 
 import * as S from "./styled";
@@ -7,6 +8,7 @@ import * as S from "./styled";
 export const Navbar = () => {
   const [authState, setAuthState] = useState({
     user_name: "",
+    id: "",
     status: false,
   });
 
@@ -17,7 +19,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://13.125.182.60:8080/auth/auth", {
+      .get("http://localhost:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -29,6 +31,7 @@ export const Navbar = () => {
         } else {
           setAuthState({
             user_name: response.data.user_id,
+            id: response.data.id,
             status: true,
           });
           setTeaState({
@@ -68,7 +71,12 @@ export const Navbar = () => {
                 {authState.user_name === TeacherList ? (
                   <></>
                 ) : (
-                  <div style={{ color: "black" }}>{authState.user_name}</div>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/profile/${authState.id}`}
+                  >
+                    <div style={{ color: "black" }}>{authState.user_name}</div>
+                  </Link>
                 )}
                 {teaState.t_job === "teacher" ? (
                   <S.NavbarA to="st/list">

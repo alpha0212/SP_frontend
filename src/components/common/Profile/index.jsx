@@ -13,15 +13,13 @@ export const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://13.125.182.60:8080/todaytimes/byuserId/${id}`)
+      .get(`http://localhost:8080/todaytimes/byuserId/${id}`)
       .then((response) => {
         setListOfPosts(response.data);
       });
-    axios
-      .get(`http://13.125.182.60:8080/auth/basicinfo/${id}`)
-      .then((response) => {
-        setUser(response.data.id);
-      });
+    axios.get(`http://localhost:8080/auth/basicinfo/${id}`).then((response) => {
+      setUser(response.data.id);
+    });
   }, []);
   return (
     <div>

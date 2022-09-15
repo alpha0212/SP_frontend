@@ -37,11 +37,12 @@ export const TimeInput = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://13.125.182.60:8080/todaytimes", data, {
+      .post("http://localhost:8080/todaytimes", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
         alert("Success");
+        navigate("/");
       });
   };
   return (
@@ -68,9 +69,7 @@ export const TimeInput = () => {
               <Field autoComplete="off" name="kh" />
               <label>일반공부</label>
               <Field autoComplete="off" name="study" />
-              <button type="submit" onClick={navigate("#")}>
-                제출
-              </button>
+              <button type="submit">제출</button>
             </Form>
           </Formik>
         </S.InputContainer>

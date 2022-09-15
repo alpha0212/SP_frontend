@@ -13,7 +13,7 @@ export const StList = () => {
       alert("선생님 전용 아이디 코드로 로그인 해야 이용가능합니다.");
     } else {
       axios
-        .get("http://13.125.182.60:8080/auth", {
+        .get("http://localhost:8080/auth", {
           //일반 유저의 데이터를 가져오는 게 아닌 시간데이터를 올린 유저만 이름을 가지고 온다.
           headers: { accessToken: localStorage.getItem("accessToken") },
         })

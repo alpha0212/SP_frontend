@@ -15,7 +15,7 @@ export const TimeData = () => {
 
   useEffect(() => {
     axios
-      .get(`http://13.125.182.60:8080/todaytimes/byId/${id}`)
+      .get(`http://localhost:8080/todaytimes/byId/${id}`)
       .then((response) => {
         setDataOfTime(response.data);
       });
