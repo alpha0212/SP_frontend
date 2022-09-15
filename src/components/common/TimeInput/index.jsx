@@ -37,7 +37,7 @@ export const TimeInput = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:8080/todaytimes", data, {
+      .post("http://13.125.182.60:8080/todaytimes", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

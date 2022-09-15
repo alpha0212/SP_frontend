@@ -15,20 +15,22 @@ export const TeacherForm = () => {
 
   const login = () => {
     const data = { t_id: t_id, t_pw: t_pw, t_job: t_job };
-    axios.post("http://localhost:8080/teacher/login", data).then((response) => {
-      if (response.data.error) {
-        alert(response.data.error);
-      } else {
-        navigate("/");
-        localStorage.setItem("accessToken", response.data.token);
-        setAuthState({
-          t_id: response.data.t_id,
-          t_job: response.data.t_job,
-          id: response.data.id,
-          status: false,
-        });
-      }
-    });
+    axios
+      .post("http://13.125.182.60:8080/teacher/login", data)
+      .then((response) => {
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          navigate("/");
+          localStorage.setItem("accessToken", response.data.token);
+          setAuthState({
+            t_id: response.data.t_id,
+            t_job: response.data.t_job,
+            id: response.data.id,
+            status: false,
+          });
+        }
+      });
   };
   useEffect(() => {
     if (localStorage.getItem("accessToken")) {
