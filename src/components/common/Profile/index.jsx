@@ -8,6 +8,7 @@ export const Profile = () => {
   let { id } = useParams(); // 재할당 가능
   let navigate = useNavigate();
   const [listOfPosts, setListOfPosts] = useState([]);
+  const [user, setUser] = useState("");
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
@@ -16,6 +17,9 @@ export const Profile = () => {
       .then((response) => {
         setListOfPosts(response.data);
       });
+    axios.get(`http://localhost:8080/auth/basicinfo/${id}`).then((response) => {
+      setUser(response.data.id);
+    });
   }, []);
   return (
     <div>

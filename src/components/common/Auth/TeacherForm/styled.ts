@@ -4,8 +4,9 @@ export const FormInputContainer = styled.div`
   width: 41rem;
   display: flex;
   flex-direction: column;
-  margin-left: 28%;
-  margin-top: 30%;
+  margin: auto;
+  top: 50%;
+  transform: translate(0, 50%);
   @media screen and (max-width: 40rem) {
     width: 33.4rem;
   }
@@ -57,16 +58,16 @@ export const InputElementContainer = styled.div`
   background-color: #ffffff;
   border-radius: 2rem;
   box-shadow: 1px 3px 4px rgba(213, 223, 247, 0.15);
-  margin-bottom: 1.2rem;
-  justify-content: center;
 `;
 
 export const InputContainer = styled.div`
-  padding-left: 3.5rem;
+  margin-left: 3.5rem;
 `;
 
 export const ButtonContainer = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const TeacherButton = styled.button`
@@ -78,8 +79,6 @@ export const TeacherButton = styled.button`
   border: none;
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 18%;
-  margin-bottom: 2rem;
 `;
 
 export const empty = styled.div`

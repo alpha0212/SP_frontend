@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -22,7 +22,7 @@ export const TimeInput = () => {
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
       navigate("/auth/login");
-      alert("로그인해야 이용 가능한 서비스입니다.")
+      alert("로그인해야 이용 가능한 서비스입니다.");
     }
   }, []);
   const validationSchema = Yup.object().shape({
@@ -48,8 +48,12 @@ export const TimeInput = () => {
     <>
       <S.InputTimeContainer>
         <S.InputContainer>
-          <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-            <Form style={{display: 'flex', flexDirection: 'column'}}>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={onSubmit}
+            validationSchema={validationSchema}
+          >
+            <Form style={{ display: "flex", flexDirection: "column" }}>
               <label>국어</label>
               <Field autoComplete="off" name="kor" />
               <label>영어</label>
@@ -64,11 +68,11 @@ export const TimeInput = () => {
               <Field autoComplete="off" name="kh" />
               <label>일반공부</label>
               <Field autoComplete="off" name="study" />
-              <button type="submit">제출</button>
-              
+              <button type="submit" onClick={navigate("#")}>
+                제출
+              </button>
             </Form>
           </Formik>
- 
         </S.InputContainer>
       </S.InputTimeContainer>
     </>
