@@ -23,7 +23,7 @@ export const List = styled.div`
 
 export const StText = styled.div`
   margin: auto;
-  margin-top: 3rem;
+  margin-top: 1.7rem;
 `;
 
 export const StName = styled(Link)`
@@ -57,4 +57,12 @@ export const SearchContainer = styled.div`
 
 export const Search = styled.div`
   display: inline-block;
+`;
+
+export const Alert = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 3rem;
+  font-weight: bold;
 `;

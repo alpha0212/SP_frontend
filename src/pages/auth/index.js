@@ -1,12 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import {
-  FormInput,
-  AuthFormTemplate,
-  RegisterForm,
-  TeacherForm,
-} from "src/components";
+import { FormInput, AuthFormTemplate, RegisterForm } from "src/components";
 
 import * as S from "./styled";
 
