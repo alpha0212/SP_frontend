@@ -13,7 +13,7 @@ export const FormInput = () => {
 
   const login = () => {
     const data = { user_id: user_id, user_pw: user_pw };
-    axios.post("http://localhost:8080/auth/login", data).then((response) => {
+    axios.post("http://52.79.235.48:8080/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {

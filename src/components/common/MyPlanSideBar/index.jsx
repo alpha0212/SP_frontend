@@ -11,7 +11,7 @@ export const MyPlanSideBar = () => {
 
   useEffect(() => {
     axios
-      .get("http://13.125.182.60:8080/auth/auth", {
+      .get("http://52.79.235.48:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

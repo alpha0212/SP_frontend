@@ -26,7 +26,7 @@ export const RegisterForm = React.forwardRef<
   });
 
   const onSubmit = (data: any) => {
-    axios.post("http://localhost:8080/auth", data).then(() => {
+    axios.post("http://52.79.235.48:8080/auth", data).then(() => {
       console.log(data);
       navigate("/auth/login");
     });
