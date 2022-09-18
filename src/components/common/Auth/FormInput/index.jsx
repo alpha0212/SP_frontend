@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "src/helper/AuthContext";
+import { Button } from "src/components/common";
 import * as S from "./styled";
 
 export const FormInput = () => {
@@ -34,26 +35,34 @@ export const FormInput = () => {
     }
   }, []);
   return (
-    <S.FormInputContainer>
-      <S.InputElementContainer>
-        <S.InputContainer>
-          <S.InputElement
-            type="text"
-            onChange={(event) => {
-              setUserid(event.target.value);
-            }}
-            placeholder="id"
-          />
-          <S.InputElement
-            type="password"
-            onChange={(event) => {
-              setUserpw(event.target.value);
-            }}
-            placeholder="pw"
-          />
-          <button onClick={login}>로그인</button>
-        </S.InputContainer>
-      </S.InputElementContainer>
-    </S.FormInputContainer>
+    <>
+      <S.FormInputContainer>
+        <S.InputElementContainer>
+          <S.InputContainer>
+            <S.InputElement
+              type="text"
+              onChange={(event) => {
+                setUserid(event.target.value);
+              }}
+              placeholder="id"
+            />
+            <S.InputElement
+              type="password"
+              onChange={(event) => {
+                setUserpw(event.target.value);
+              }}
+              placeholder="pw"
+            />
+            <Button onClick={login}>로그인</Button>
+          </S.InputContainer>
+        </S.InputElementContainer>
+      </S.FormInputContainer>
+      <S.ChooseMenu>
+        <S.Choose to="/auth/teacher">
+          <S.goTeacher>선생님</S.goTeacher>로그인
+        </S.Choose>
+        |<S.Choose to="#">비밀번호 변경</S.Choose>
+      </S.ChooseMenu>
+    </>
   );
 };
