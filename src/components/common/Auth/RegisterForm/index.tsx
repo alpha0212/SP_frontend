@@ -39,6 +39,7 @@ export const RegisterForm = React.forwardRef<
       alert("로그인되어 있습니다.");
     }
   }, []);
+
   return (
     <S.FormInputContainer ref={ref}>
       <S.InputElementContainer>

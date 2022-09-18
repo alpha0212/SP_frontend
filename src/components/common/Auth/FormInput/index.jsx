@@ -34,6 +34,7 @@ export const FormInput = () => {
       alert("로그인되었습니다.");
     }
   }, []);
+  const enableButton = user_pw === "" ? true : false;
   return (
     <>
       <S.FormInputContainer>
@@ -52,8 +53,17 @@ export const FormInput = () => {
                 setUserpw(event.target.value);
               }}
               placeholder="pw"
+              value={user_pw}
             />
-            <Button onClick={login}>로그인</Button>
+            <Button
+              disabled={enableButton}
+              style={{
+                backgroundColor: enableButton === true ? "#858585" : "black",
+              }}
+              onClick={login}
+            >
+              로그인
+            </Button>
           </S.InputContainer>
         </S.InputElementContainer>
       </S.FormInputContainer>
