@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
+  margin-top: 10rem;
 `;
 
 export const ListContainer = styled.div`

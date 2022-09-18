@@ -21,7 +21,7 @@ export const MyPlanSideBar = () => {
           setAuthState({ ...authState, status: false });
         } else {
           setAuthState({
-            user_name: response.data.user_id,
+            user_name: response.data.user_name,
             status: true,
           });
         }

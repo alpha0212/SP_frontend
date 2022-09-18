@@ -20,9 +20,13 @@ export const Profile = () => {
     axios.get(`http://localhost:8080/byuserId/${id}`).then((response) => {
       setUser(response.data.id);
     });
+    if (!localStorage.getItem("accessToken")) {
+      navigate("/auth/login");
+      alert("로그인해주세요.");
+    }
   }, []);
   return (
-    <div>
+    <S.TotalContainer>
       {listOfPosts.map((value, key) => {
         return (
           <S.DayContainer key={key}>
@@ -36,6 +40,6 @@ export const Profile = () => {
           </S.DayContainer>
         );
       })}
-    </div>
+    </S.TotalContainer>
   );
 };

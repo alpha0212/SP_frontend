@@ -30,7 +30,7 @@ export const Navbar = () => {
           setTeaState({ ...teaState, status: false });
         } else {
           setAuthState({
-            user_name: response.data.user_id,
+            user_name: response.data.user_name,
             id: response.data.id,
             status: true,
           });

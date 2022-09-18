@@ -10,7 +10,7 @@ export const NavbarContainer = styled.div`
   z-index: 2;
   padding-top: 2.5rem;
   color: white;
-  background: #f2f2f2;
+  background: #ffffff;
   font-weight: bold;
   display: flex;
   justify-content: space-between;

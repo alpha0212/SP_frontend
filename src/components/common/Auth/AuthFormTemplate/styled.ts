@@ -14,8 +14,8 @@ export const AuthFormTypeContainer = styled.div<{
 }>`
   display: flex;
   background-color: #fcfcfc;
-  width: 41rem;
-  margin-left: 0.9rem;
+  width: 41.6rem;
+  margin-left: 0.8rem;
 
   & > a {
     border: 1rem;
@@ -34,8 +34,8 @@ export const AuthFormTypeContainer = styled.div<{
     }
   }
   & > a.active {
-    border-bottom: solid 0.5rem #6b94f8;
-    color: #6b94f8;
+    border-bottom: solid 0.5rem black;
+    color: black;
   }
 `;
 

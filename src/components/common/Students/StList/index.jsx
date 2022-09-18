@@ -78,7 +78,7 @@ export const StList = () => {
                 return (
                   <S.List key={key}>
                     <S.StName to={`/profile/${value.id}`}>
-                      <S.StText>{value.user_id}</S.StText>
+                      <S.StText>{value.user_name}</S.StText>
                     </S.StName>
                   </S.List>
                 );
