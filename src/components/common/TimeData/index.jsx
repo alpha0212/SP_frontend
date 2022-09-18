@@ -9,7 +9,6 @@ import * as S from "./styled";
 
 export const TimeData = () => {
   let { id } = useParams();
-  let navigate = useNavigate();
   const [timeData, setDataOfTime] = useState([]);
   const { authState } = useContext(AuthContext);
 
