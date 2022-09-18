@@ -37,40 +37,45 @@ export const TeacherForm = () => {
     }
   }, []);
   return (
-    <S.FormInputContainer>
-      <S.InputElementContainer>
-        <S.InputContainer>
-          <S.empty />
-          <S.InputElement
-            type="text"
-            onChange={(event) => {
-              setTid(event.target.value);
-            }}
-            placeholder="id"
-          />
-          <S.InputElement
-            type="password"
-            onChange={(event) => {
-              setTpw(event.target.value);
-            }}
-            placeholder="pw"
-          />
-          <S.LabelContainer>
-            <S.Label>아래에</S.Label>
-            <S.teacher>teacher</S.teacher>
-            <S.Label>을 입력해주세요.</S.Label>
-          </S.LabelContainer>
-          <S.InputElement
-            type="text"
-            onChange={(event) => {
-              setTjob(event.target.value);
-            }}
-          />
-        </S.InputContainer>
-        <S.ButtonContainer>
-          <S.TeacherButton onClick={login}>로그인</S.TeacherButton>
-        </S.ButtonContainer>
-      </S.InputElementContainer>
-    </S.FormInputContainer>
+    <>
+      <S.FormInputContainer>
+        <S.TitleContainer>
+          <S.Title>선생님 로그인</S.Title>
+        </S.TitleContainer>
+        <S.InputElementContainer>
+          <S.InputContainer>
+            <S.empty />
+            <S.InputElement
+              type="text"
+              onChange={(event) => {
+                setTid(event.target.value);
+              }}
+              placeholder="id"
+            />
+            <S.InputElement
+              type="password"
+              onChange={(event) => {
+                setTpw(event.target.value);
+              }}
+              placeholder="pw"
+            />
+            <S.LabelContainer>
+              <S.Label>아래에</S.Label>
+              <S.teacher>‘teacher’</S.teacher>
+              <S.Label>을 입력해주세요.</S.Label>
+            </S.LabelContainer>
+            <S.InputElement
+              type="text"
+              onChange={(event) => {
+                setTjob(event.target.value);
+              }}
+            />
+          </S.InputContainer>
+          <S.ButtonContainer>
+            <Button onClick={login}>로그인</Button>
+          </S.ButtonContainer>
+        </S.InputElementContainer>
+      </S.FormInputContainer>
+    </>
   );
 };
