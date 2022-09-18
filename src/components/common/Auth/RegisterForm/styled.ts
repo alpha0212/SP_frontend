@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Field } from "formik";
 
 export const FormInputContainer = styled.div`
   width: 40rem;
@@ -13,22 +14,20 @@ export const FormInputContainer = styled.div`
 export const Label = styled.p`
   font-size: 1.7rem;
   color: #363636;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 `;
-export const InputElement = styled.input`
+export const InputElement = styled(Field)`
   border: none;
   outline: none;
-  width: 33rem;
+  width: 41rem;
   height: 5rem;
   font-size: 1.6rem;
+  border: 0.2rem solid #c6c6c6;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0.1rem 0.4rem 0.3rem 0 rgba(213, 223, 247, 0.15);
   ::placeholder {
     color: #afafaf;
-  }
-  &:hover {
-    border-color: #b7dcb9;
-  }
-  &:focus {
-    border-color: #4cb050;
   }
   @media screen and (max-width: 40rem) {
     width: 28rem;
@@ -38,12 +37,7 @@ export const InputElement = styled.input`
 `;
 
 export const InputElementContainer = styled.div`
-  background-color: #ffffff;
-  border-radius: 2rem;
-  border: 0.1rem solid #c6c6c6;
-  box-shadow: 1px 3px 4px rgba(213, 223, 247, 0.15);
+  background-color: #fcfcfc;
   margin-bottom: 5.4rem;
 `;
-export const InputContainer = styled.div`
-  padding-left: 3rem;
-`;
+export const InputContainer = styled.div``;

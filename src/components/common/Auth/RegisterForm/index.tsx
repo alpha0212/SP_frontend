@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
+import { Button } from "src/components/common";
 import * as Yup from "yup";
 import axios from "axios";
 import * as S from "./styled";
@@ -48,21 +49,28 @@ export const RegisterForm = React.forwardRef<
             validationSchema={validationSchema}
           >
             <Form>
-              <Field autoComplete="off" name="user_id" placeholder="이름" />
-              <Field
-                type="text"
+              <S.Label>이름</S.Label>
+              <S.InputElement
                 autoComplete="off"
                 name="user_name"
+                placeholder="이름"
+              />
+              <S.Label>아이디</S.Label>
+              <S.InputElement
+                type="text"
+                autoComplete="off"
+                name="user_id"
                 placeholder="id"
               />
-              <Field
+              <S.Label>비밀번호</S.Label>
+              <S.InputElement
                 autoComplete="off"
                 name="user_pw"
                 placeholder="pw"
                 type="password"
               />
 
-              <button type="submit">회원가입</button>
+              <Button type="submit">회원가입</Button>
             </Form>
           </Formik>
         </S.InputContainer>
