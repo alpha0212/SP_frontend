@@ -8,7 +8,6 @@ export const Profile = () => {
   let { id } = useParams(); // 재할당 가능
   let navigate = useNavigate();
   const [listOfPosts, setListOfPosts] = useState([]);
-  const [user, setUser] = useState("");
   const { authState } = useContext(AuthContext);
 
   useEffect(() => {
@@ -17,9 +16,6 @@ export const Profile = () => {
       .then((response) => {
         setListOfPosts(response.data);
       });
-    axios.get(`http://localhost:8080/byuserId/${id}`).then((response) => {
-      setUser(response.data.id);
-    });
     if (!localStorage.getItem("accessToken")) {
       navigate("/auth/login");
       alert("로그인해주세요.");

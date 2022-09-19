@@ -45,20 +45,20 @@ export const FormInput = () => {
               onChange={(event) => {
                 setUserid(event.target.value);
               }}
-              placeholder="id"
+              placeholder="아이디"
             />
             <S.InputElement
               type="password"
               onChange={(event) => {
                 setUserpw(event.target.value);
               }}
-              placeholder="pw"
+              placeholder="비밀번호"
               value={user_pw}
             />
             <Button
               disabled={enableButton}
               style={{
-                backgroundColor: enableButton === true ? "#858585" : "black",
+                backgroundColor: enableButton === true ? "#afafaf" : "black",
               }}
               onClick={login}
             >

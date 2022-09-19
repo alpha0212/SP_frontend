@@ -8,6 +8,7 @@ export const listOfPosts = styled.div``;
 
 export const TotalContainer = styled.div`
   margin-top: 10rem;
+  text-align: center;
 `;
 
 export const DayContainer = styled.div`

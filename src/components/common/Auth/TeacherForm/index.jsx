@@ -36,6 +36,7 @@ export const TeacherForm = () => {
       alert("로그인되었습니다.");
     }
   }, []);
+  const enableButton = t_job === "teacher" ? false : true;
   return (
     <>
       <S.FormInputContainer>
@@ -50,14 +51,14 @@ export const TeacherForm = () => {
               onChange={(event) => {
                 setTid(event.target.value);
               }}
-              placeholder="id"
+              placeholder="아이디"
             />
             <S.InputElement
               type="password"
               onChange={(event) => {
                 setTpw(event.target.value);
               }}
-              placeholder="pw"
+              placeholder="비밀번호"
             />
             <S.LabelContainer>
               <S.Label>아래에</S.Label>
@@ -72,7 +73,15 @@ export const TeacherForm = () => {
             />
           </S.InputContainer>
           <S.ButtonContainer>
-            <Button onClick={login}>로그인</Button>
+            <Button
+              disabled={enableButton}
+              style={{
+                backgroundColor: enableButton === true ? "#afafaf" : "black",
+              }}
+              onClick={login}
+            >
+              로그인
+            </Button>
           </S.ButtonContainer>
         </S.InputElementContainer>
       </S.FormInputContainer>

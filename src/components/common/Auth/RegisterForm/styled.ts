@@ -22,6 +22,7 @@ export const InputElement = styled(Field)`
   width: 41rem;
   height: 5rem;
   font-size: 1.6rem;
+  font-weight: 600;
   border: 0.2rem solid #c6c6c6;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
