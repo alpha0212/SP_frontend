@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
