@@ -37,11 +37,11 @@ export const TimeInput = () => {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:8080/todaytimes", data, {
+      .post("http://52.79.235.48:8080/todaytimes", data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {
-        alert("Success");
+        alert("오늘도 수고했어요!😀");
         navigate("/");
       });
   };
