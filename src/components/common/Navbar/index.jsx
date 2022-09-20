@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://52.79.235.48:8080/auth/auth", {
+      .get("http://localhost:8080/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -41,13 +41,12 @@ export const Navbar = () => {
         }
       });
   }, []);
-  const TeacherList = "NvNXPf8d";
+
   const logout = () => {
     localStorage.removeItem("accessToken");
     setAuthState({ user_name: "", status: false });
     setTeaState({ t_job: "", status: false });
   };
-  console.log(teaState.t_job);
 
   return (
     <>
@@ -68,7 +67,7 @@ export const Navbar = () => {
                 ) : (
                   <S.NavbarA to="time/mytime">My시간</S.NavbarA>
                 )}
-                {authState.user_name === TeacherList ? (
+                {teaState.t_job === "teacher" ? (
                   <></>
                 ) : (
                   <Link

@@ -47,3 +47,18 @@ export const TimeGraphContainer = styled.div`
 export const TimeInputContainer = styled.div`
   display: flex;
 `;
+
+export const HeaderContainer = styled.div`
+  width: 100%;
+  background: #2cd3e6;
+  padding-top: 3.5rem;
+`;
+
+export const Header = styled.div`
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 3rem;
+  letter-spacing: 0.1rem;
+`;

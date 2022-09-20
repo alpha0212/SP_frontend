@@ -14,7 +14,7 @@ export const FormInput = () => {
 
   const login = () => {
     const data = { user_id: user_id, user_pw: user_pw };
-    axios.post("http://52.79.235.48:8080/auth/login", data).then((response) => {
+    axios.post("http://localhost:8080/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {
@@ -64,15 +64,16 @@ export const FormInput = () => {
             >
               로그인
             </Button>
+            <S.ChooseMenu>
+              <S.Choose to="/auth/teacher">
+                <S.goTeacher>선생님</S.goTeacher>로그인
+              </S.Choose>
+              <S.verticalChoose>|</S.verticalChoose>
+              <S.Choose to="#">비밀번호 변경</S.Choose>
+            </S.ChooseMenu>
           </S.InputContainer>
         </S.InputElementContainer>
       </S.FormInputContainer>
-      <S.ChooseMenu>
-        <S.Choose to="/auth/teacher">
-          <S.goTeacher>선생님</S.goTeacher>로그인
-        </S.Choose>
-        |<S.Choose to="#">비밀번호 변경</S.Choose>
-      </S.ChooseMenu>
     </>
   );
 };

@@ -8,11 +8,10 @@ export const Profile = () => {
   let { id } = useParams(); // 재할당 가능
   let navigate = useNavigate();
   const [listOfPosts, setListOfPosts] = useState([]);
-  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     axios
-      .get(`http://52.79.235.48:8080/todaytimes/byuserId/${id}`)
+      .get(`http://localhost:8080/todaytimes/byuserId/${id}`)
       .then((response) => {
         setListOfPosts(response.data);
       });

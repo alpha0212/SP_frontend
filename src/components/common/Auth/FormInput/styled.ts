@@ -31,7 +31,7 @@ export const InputElement = styled.input`
     color: #afafaf;
   }
   @media screen and (max-width: 40rem) {
-    width: 26rem;
+    width: 32.8rem;
     height: 5rem;
     font-size: 1.6rem;
   }
@@ -45,17 +45,27 @@ export const InputContainer = styled.div``;
 
 export const ChooseMenu = styled.div`
   width: 41rem;
+  margin-top: 1.5rem;
   color: #858585;
   text-align: center;
   display: flex;
+  @media screen and (max-width: 40rem) {
+    width: 31rem;
+    margin: auto;
+    padding-top: 2rem;
+  }
+`;
+
+export const verticalChoose = styled.div`
+  margin-left: 2rem;
+  margin-right: 2rem;
 `;
 
 export const Choose = styled(Link)`
   text-decoration: none;
   color: #858585;
-  margin-right: 5rem;
-  margin-left: 5rem;
   display: flex;
+  margin: auto;
   letter-spacing: 0.12rem;
 `;
 

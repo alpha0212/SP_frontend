@@ -16,7 +16,10 @@ export const AuthFormTypeContainer = styled.div<{
   background-color: #fcfcfc;
   width: 41.6rem;
   margin-left: 0.8rem;
-
+  @media screen and (max-width: 40rem) {
+    font-size: 2.2rem;
+    width: 33.4rem;
+  }
   & > a {
     border: 1rem;
     flex: 1 1 auto;
@@ -31,6 +34,7 @@ export const AuthFormTypeContainer = styled.div<{
     transition: all 200ms;
     @media screen and (max-width: 40rem) {
       font-size: 2.2rem;
+      width: 33.4rem;
     }
   }
   & > a.active {

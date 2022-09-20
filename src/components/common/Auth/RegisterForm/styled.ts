@@ -31,7 +31,7 @@ export const InputElement = styled(Field)`
     color: #afafaf;
   }
   @media screen and (max-width: 40rem) {
-    width: 28rem;
+    width: 32.8rem;
     height: 5rem;
     font-size: 1.6rem;
   }

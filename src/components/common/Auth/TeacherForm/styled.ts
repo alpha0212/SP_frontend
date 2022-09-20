@@ -31,28 +31,29 @@ export const teacher = styled.div`
 `;
 
 export const InputElement = styled.input`
+  border: none;
   outline: none;
   width: 41rem;
   height: 5rem;
   font-size: 1.6rem;
-  border: 0.2rem solid rgba(54, 54, 54, 0.2);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 1rem;
+  font-weight: 600;
+  border: 0.2rem solid #c6c6c6;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
   box-shadow: 0.1rem 0.4rem 0.3rem 0 rgba(213, 223, 247, 0.15);
   ::placeholder {
     color: #afafaf;
+  }
+  @media screen and (max-width: 40rem) {
+    width: 32.8rem;
+    height: 5rem;
+    font-size: 1.6rem;
   }
   &:hover {
     border: 0.2rem solid rgba(54, 54, 54, 0.4);
   }
   &:focus {
     border: 0.2rem solid rgba(54, 54, 54, 0.7);
-  }
-  @media screen and (max-width: 40rem) {
-    width: 26rem;
-    height: 5rem;
-    font-size: 1.6rem;
   }
 `;
 

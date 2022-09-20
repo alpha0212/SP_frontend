@@ -51,7 +51,6 @@ export const TimeData = () => {
     [timeData]
   );
 
-  let delayed;
   const time = useMemo(
     () => ({
       labels: subData.map((val) => val.sub),
@@ -93,7 +92,7 @@ export const TimeData = () => {
 
   useEffect(() => {
     axios
-      .get(`http://52.79.235.48:8080/todaytimes/byId/${id}`)
+      .get(`http://localhost:8080/todaytimes/byId/${id}`)
       .then((res) => setTimeData(res.data));
   }, []);
 
