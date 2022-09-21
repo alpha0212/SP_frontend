@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
+import { Field } from "formik";
 
 export const InputTimeContainer = styled.div`
-  width: 30 rem;
-  height: 3.8rem;
   display: flex;
-  margin-top: 5rem;
-  background-color: #fff;
+  margin: auto;
+  @media screen and (max-width: 40rem) {
+    display: flex;
+    margin: auto;
+  }
 `;
 
 export const SelectOption = styled.select`
@@ -25,17 +27,25 @@ export const Options = styled.option`
 `;
 
 export const InputContainer = styled.div`
-  display: flex;
-  margin-left: 2rem;
+  margin-top: 8rem;
+  @media screen and (max-width: 40rem) {
+    margin-top: 5rem;
+  }
 `;
 
-export const InputTime = styled.input`
+export const InputTime = styled(Field)`
   padding-top: 1rem;
   padding-bottom: 1rem;
-  width: 6.5rem;
+  width: 13rem;
   border-radius: 1rem;
-  border: none;
+  border: 0.2rem solid #ccc;
+  box-shadow: 0.1rem 0.2rem 0.2rem 0 rgba(204, 204, 204, 0.3);
+  &:focus {
+    border: 0.2rem solid #5e5e5e;
+  }
   text-align: center;
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
 `;
 
 export const InputTImeTitle = styled.div`

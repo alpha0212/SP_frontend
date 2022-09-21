@@ -65,7 +65,7 @@ export const Navbar = () => {
                 {teaState.t_job === "teacher" ? (
                   <></>
                 ) : (
-                  <S.NavbarA to="time/mytime">My시간</S.NavbarA>
+                  <S.NavbarA to="/time/today">My시간</S.NavbarA>
                 )}
                 {teaState.t_job === "teacher" ? (
                   <></>

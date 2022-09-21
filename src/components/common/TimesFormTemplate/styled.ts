@@ -54,6 +54,9 @@ export const TodayStudyContainer = styled.div<{
     border-bottom: 0.2rem solid #2cd3e6;
     padding-bottom: 2rem;
   }
+  @media screen and (min-width: 76rem) {
+    margin-right: 20rem;
+  }
 `;
 
 export const HabitSetContainer = styled.div<{
@@ -72,6 +75,9 @@ export const MyGoalContainer = styled.div<{
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
     padding-bottom: 2rem;
+  }
+  @media screen and (min-width: 76rem) {
+    margin-left: 20rem;
   }
 `;
 //

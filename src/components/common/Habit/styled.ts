@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const MyTimeContainer = styled.div`
   font-family: Pretendard;
@@ -19,7 +20,6 @@ export const MyTimeText = styled.div`
 `;
 export const VerticalContainer = styled.div`
   padding-top: 5rem;
-  padding-left: 10rem;
 `;
 
 export const Vertical = styled.div`
@@ -46,4 +46,61 @@ export const TimeGraphContainer = styled.div`
 
 export const TimeInputContainer = styled.div`
   display: flex;
+`;
+
+export const HeaderContainer = styled.div`
+  width: 100%;
+  background: #2cd3e6;
+  padding-top: 2.7rem;
+`;
+
+export const Header = styled.div`
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2.7rem;
+  letter-spacing: 0.1rem;
+`;
+
+export const ListOfMenu = styled.div`
+  padding-top: 2.25rem;
+  box-shadow: 0rem 0.3rem 0.6rem 0rem #c7c7c729;
+  display: flex;
+`;
+
+export const ListContainer = styled.div`
+  text-align: center;
+  display: flex;
+  margin: auto;
+`;
+
+export const ListTextContainer = styled.div`
+  padding-bottom: 2rem;
+`;
+
+export const TodayStudyContainer = styled.div`
+  margin-right: 2rem;
+`;
+
+export const HabitSetContainer = styled.div`
+  padding-bottom: 2.5rem;
+`;
+export const MyGoalContainer = styled.div`
+  margin-left: 2rem;
+`;
+
+export const TodayStudy = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export const HabitSet = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export const MyGoal = styled(Link)`
+  text-decoration: none;
+  color: black;
 `;

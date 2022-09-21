@@ -33,11 +33,9 @@ export const TimesFormTemplate: React.FC<TimesFormTemplateProps> = ({
         </S.ListTypeContainer>
       </S.ListOfMenu>
       <S.FlexContainer>
-        <S.MyTimeContainer>
-          {formType === "today" ? todayForm : <></>}
-          {formType === "habit" ? habitForm : <></>}
-          {formType === "goal" ? goalForm : <></>}
-        </S.MyTimeContainer>
+        {formType === "today" ? todayForm : <></>}
+        {formType === "habit" ? habitForm : <></>}
+        {formType === "goal" ? goalForm : <></>}
       </S.FlexContainer>
     </>
   );

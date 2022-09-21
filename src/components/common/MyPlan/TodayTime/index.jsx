@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "src/helper/AuthContext";
+import { Button } from "src/components";
 
 import * as S from "./styled";
 
@@ -54,20 +54,22 @@ export const TodayTime = () => {
           >
             <Form style={{ display: "flex", flexDirection: "column" }}>
               <label>국어</label>
-              <Field autoComplete="off" name="kor" />
+              <S.InputTime autoComplete="off" name="kor" />
               <label>영어</label>
-              <Field autoComplete="off" name="eng" />
+              <S.InputTime autoComplete="off" name="eng" />
               <label>수학</label>
-              <Field autoComplete="off" name="math" />
+              <S.InputTime autoComplete="off" name="math" />
               <label>과학</label>
-              <Field autoComplete="off" name="sci" />
+              <S.InputTime autoComplete="off" name="sci" />
               <label>사회</label>
-              <Field autoComplete="off" name="com" />
+              <S.InputTime autoComplete="off" name="com" />
               <label>한국사</label>
-              <Field autoComplete="off" name="kh" />
+              <S.InputTime autoComplete="off" name="kh" />
               <label>일반공부</label>
-              <Field autoComplete="off" name="study" />
-              <button type="submit">제출</button>
+              <S.InputTime autoComplete="off" name="study" />
+              <Button style={{ width: "13.5rem" }} type="submit">
+                제출
+              </Button>
             </Form>
           </Formik>
         </S.InputContainer>

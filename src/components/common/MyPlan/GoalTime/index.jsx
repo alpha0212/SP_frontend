@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Button } from "src/components";
 
 import * as S from "./styled";
 
@@ -44,10 +45,12 @@ export const GoalTime = () => {
           >
             <Form style={{ display: "flex", flexDirection: "column" }}>
               <label>목표기상시간H</label>
-              <Field autoComplete="off" name="GoalMorning" />
+              <S.InputTime autoComplete="off" name="GoalMorning" />
               <label>목표취침시간H</label>
-              <Field autoComplete="off" name="GoalNight" />
-              <button type="submit">제출</button>
+              <S.InputTime autoComplete="off" name="GoalNight" />
+              <Button style={{ width: "13.5rem" }} type="submit">
+                제출
+              </Button>
             </Form>
           </Formik>
         </S.InputContainer>

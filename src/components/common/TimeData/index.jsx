@@ -104,7 +104,7 @@ export const TimeData = () => {
       <HorizontalContainer>
         <Horizontal />
       </HorizontalContainer>
-      <S.TImeDataBoxContainer>
+      <S.TimeDataBoxContainer>
         <S.TimeDataBox>
           <S.TimeDataText>국어: {timeData.kor}시간</S.TimeDataText>
           <S.TimeDataText>영어: {timeData.eng}시간</S.TimeDataText>
@@ -115,7 +115,7 @@ export const TimeData = () => {
           <S.TimeDataText>일반공부: {timeData.study}시간</S.TimeDataText>
           <Bar data={time} />
         </S.TimeDataBox>
-      </S.TImeDataBoxContainer>
+      </S.TimeDataBoxContainer>
     </S.TimeDataContainer>
   );
 };

@@ -16,13 +16,11 @@ export const TimeText = styled.div`
     font-size: 3rem;
   }
 `;
-export const TImeDataBoxContainer = styled.div`
+export const TimeDataBoxContainer = styled.div`
   padding-top: 2rem;
-  padding-left: 11vw;
 `;
 
 export const TimeDataBox = styled.div`
-  width: 75vw;
   height: 100rem;
   border-radius: 2rem;
   margin-bottom: 2rem;
