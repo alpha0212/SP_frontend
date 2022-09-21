@@ -1,9 +1,12 @@
 import * as S from "./styled";
-
-export const Header = () => {
+interface HeaderProps {
+  value: string;
+}
+export const Header: React.FC<HeaderProps> = (title) => {
+  const { value } = title;
   return (
     <S.HeaderContainer>
-      <S.Header>마이플랜</S.Header>
+      <S.Header>{value}</S.Header>
     </S.HeaderContainer>
   );
 };

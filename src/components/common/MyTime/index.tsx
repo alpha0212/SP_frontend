@@ -16,7 +16,7 @@ export const MyTime: React.FC = () => {
 
   return (
     <>
-      {isDesktop && <Header />}
+      {isDesktop && <Header value="마이플랜" />}
       {isDesktop && <List />}
       {isDesktop2 && (
         <>

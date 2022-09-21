@@ -4,6 +4,7 @@ import axios from "axios";
 import { Bar } from "react-chartjs-2";
 
 import { Horizontal, HorizontalContainer } from "../MyTime/styled";
+
 import * as S from "./styled";
 
 export const TimeData = () => {
@@ -97,25 +98,27 @@ export const TimeData = () => {
   }, []);
 
   return (
-    <S.TimeDataContainer>
-      <S.TimeTextContainer>
-        <S.TimeText>🗓 {timeData.createdAt}</S.TimeText>
-      </S.TimeTextContainer>
-      <HorizontalContainer>
-        <Horizontal />
-      </HorizontalContainer>
-      <S.TimeDataBoxContainer>
-        <S.TimeDataBox>
-          <S.TimeDataText>국어: {timeData.kor}시간</S.TimeDataText>
-          <S.TimeDataText>영어: {timeData.eng}시간</S.TimeDataText>
-          <S.TimeDataText>수학: {timeData.math}시간</S.TimeDataText>
-          <S.TimeDataText>과학: {timeData.sci}시간</S.TimeDataText>
-          <S.TimeDataText>사회: {timeData.com}시간</S.TimeDataText>
-          <S.TimeDataText>한국사: {timeData.kh}시간</S.TimeDataText>
-          <S.TimeDataText>일반공부: {timeData.study}시간</S.TimeDataText>
-          <Bar data={time} />
-        </S.TimeDataBox>
-      </S.TimeDataBoxContainer>
-    </S.TimeDataContainer>
+    <>
+      <S.TimeDataContainer>
+        <S.TimeTextContainer>
+          <S.TimeText>🗓 {timeData.createdAt}</S.TimeText>
+        </S.TimeTextContainer>
+        <HorizontalContainer>
+          <Horizontal />
+        </HorizontalContainer>
+        <S.TimeDataBoxContainer>
+          <S.TimeDataBox>
+            <S.TimeDataText>국어: {timeData.kor}시간</S.TimeDataText>
+            <S.TimeDataText>영어: {timeData.eng}시간</S.TimeDataText>
+            <S.TimeDataText>수학: {timeData.math}시간</S.TimeDataText>
+            <S.TimeDataText>과학: {timeData.sci}시간</S.TimeDataText>
+            <S.TimeDataText>사회: {timeData.com}시간</S.TimeDataText>
+            <S.TimeDataText>한국사: {timeData.kh}시간</S.TimeDataText>
+            <S.TimeDataText>일반공부: {timeData.study}시간</S.TimeDataText>
+            <Bar data={time} />
+          </S.TimeDataBox>
+        </S.TimeDataBoxContainer>
+      </S.TimeDataContainer>
+    </>
   );
 };
