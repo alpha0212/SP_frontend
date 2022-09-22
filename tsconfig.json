@@ -18,5 +18,5 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": "."
   },
-  "include": ["src", "server.js"]
+  "include": ["src", "server.js", "../SP_backend/index.jsx"]
 }
