@@ -59,13 +59,6 @@ export const TimeData = () => {
         {
           label: "시간데이터",
           data: subData.map((val) => val.time),
-          plugins: {
-            deferred: {
-              xOffset: 150,
-              yOffset: "50%",
-              delay: 500,
-            },
-          },
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(255, 159, 64, 0.2)",

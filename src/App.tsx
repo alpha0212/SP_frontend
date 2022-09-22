@@ -1,15 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import {
-  MyTime,
-  TimeData,
-  Profile,
-  TodayTime,
-  HabitTime,
-} from "src/components";
+import { MyTime, TimeData, TodayTime, HabitTime } from "src/components";
 import { StList } from "src/components";
 import { MainPage, TimesPage } from "./pages";
+import { InfoPage } from "./pages/info";
 import { AuthPage } from "./pages/auth";
 import { TeacherForm } from "src/components";
 
@@ -29,7 +24,10 @@ export const App: React.FC = () => {
           <Route path="register" element={<AuthPage />} />
           <Route path="teacher" element={<TeacherForm />} />
         </Route>
-        <Route path="profile/:id" element={<Profile />} />
+        <Route path="myinfo">
+          <Route path="myplan/:id" element={<InfoPage />} />
+          <Route path="profile" element={<InfoPage />} />
+        </Route>
         <Route path="st">
           <Route path="list" element={<StList />} />
         </Route>
