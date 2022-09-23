@@ -14,3 +14,5 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 8rem 0rem 0rem 13rem;
 `;
+
+export const keySumTime = styled.div``;

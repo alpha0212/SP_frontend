@@ -7,8 +7,11 @@ import * as S from "./styled";
 export const ShowMyPlan = () => {
   let { id } = useParams(); // 재할당 가능
   let navigate = useNavigate();
-  const [listOfPosts, setListOfPosts] = useState([]);
-  const [listOfGoals, setListOfGoals] = useState([]);
+  const [listOfPosts, setListOfPosts] = useState([
+    {
+      createdAt: "",
+    },
+  ]);
 
   useEffect(() => {
     axios
@@ -16,24 +19,19 @@ export const ShowMyPlan = () => {
       .then((response) => {
         setListOfPosts(response.data);
       });
-    axios
-      .get(`http://localhost:8080/mygoal/byuserId/${id}`)
-      .then((response) => {
-        setListOfGoals(response.data);
-      });
 
     if (!localStorage.getItem("accessToken")) {
       navigate("/auth/login");
       alert("로그인되어있나요?🤔");
     }
   }, []);
-
+  console.log(listOfPosts);
   return (
     <>
       <S.Slider>
         <S.TotalContainer>
           <S.DayContainer>
-            {listOfPosts.map((value, key) => {
+            {listOfPosts.map((value: any, key: any) => {
               return (
                 <div key={key}>
                   <S.DayTime

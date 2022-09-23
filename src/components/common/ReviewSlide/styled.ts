@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const ReviewContainer = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 20vh;
   margin: auto;
   padding-top: 5vh;
@@ -10,10 +10,8 @@ export const ReviewContainer = styled.div`
 
 export const horizontal_scroll = styled.div`
   width: 100%;
-  height: 8rem;
+  height: 11rem;
   background-color: #fff;
-  border: 0.1rem solid black;
-  border-radius: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,7 +22,6 @@ export const horizontal_scroll = styled.div`
 
 export const reviews_container = styled.div`
   max-height: 12rem;
-  border: 0.1rem solid #ddd;
   display: flex;
   overflow-x: auto;
 `;
@@ -32,6 +29,7 @@ export const reviews_container = styled.div`
 export const reviews_box = styled.div`
   min-width: 50rem;
   height: 11rem;
+  border-radius: 1.2rem;
   line-height: 11rem;
   text-align: center;
   background-color: #ddd;

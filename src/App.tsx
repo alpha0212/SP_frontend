@@ -26,7 +26,7 @@ export const App: React.FC = () => {
         </Route>
         <Route path="myinfo">
           <Route path="myplan/:id" element={<InfoPage />} />
-          <Route path="profile" element={<InfoPage />} />
+          <Route path="profile/:id" element={<InfoPage />} />
         </Route>
         <Route path="st">
           <Route path="list" element={<StList />} />

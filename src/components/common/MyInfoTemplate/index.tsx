@@ -52,7 +52,9 @@ export const MyInfoTemplate: React.FC<MyInfoTemplateProps> = ({
             </S.TodayStudy>
           </S.MyPlanContainer>
           <S.ProfileContainer infoType="profile">
-            <S.TodayStudy to="/myinfo/profile">프로필</S.TodayStudy>
+            <S.TodayStudy to={`/myinfo/profile/${authState.id}`}>
+              프로필
+            </S.TodayStudy>
           </S.ProfileContainer>
         </S.ListTypeContainer>
       </S.ListOfMenu>

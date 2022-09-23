@@ -7,16 +7,14 @@ export const Review = () => {
     <S.ReviewContainer>
       <S.horizontal_scroll>
         <S.reviews_container>
-          <S.reviews_box>
-            Im Soory 선생님을 만나면서 시험성적 평균이 올랐습니다.
-          </S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
-          <S.reviews_box>기러기</S.reviews_box>
+          <S.reviews_box>1</S.reviews_box>
+          <S.reviews_box>2</S.reviews_box>
+          <S.reviews_box>3</S.reviews_box>
+          <S.reviews_box>4</S.reviews_box>
+          <S.reviews_box>5</S.reviews_box>
+          <S.reviews_box>6</S.reviews_box>
+          <S.reviews_box>7</S.reviews_box>
+          <S.reviews_box>8</S.reviews_box>
         </S.reviews_container>
       </S.horizontal_scroll>
     </S.ReviewContainer>
