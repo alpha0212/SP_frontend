@@ -67,7 +67,7 @@ export const StList = () => {
             {listOfUsers
               .filter((value) => {
                 if (searchTerm === "") {
-                  return value;
+                  return value.user_name;
                 } else if (
                   value.user_name
                     .toLowerCase()
@@ -79,7 +79,7 @@ export const StList = () => {
               .map((value, key) => {
                 return (
                   <S.List key={key}>
-                    <S.StName to={`/profile/${value.id}`}>
+                    <S.StName to={`/timedata/${value.id}`}>
                       <S.StText>{value.user_name}</S.StText>
                     </S.StName>
                   </S.List>
