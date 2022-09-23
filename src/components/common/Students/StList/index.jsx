@@ -66,10 +66,12 @@ export const StList = () => {
           <S.ListContainer>
             {listOfUsers
               .filter((value) => {
-                if (searchTerm == "") {
+                if (searchTerm === "") {
                   return value;
                 } else if (
-                  value.user_id.toLowerCase().includes(searchTerm.toLowerCase())
+                  value.user_name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
                 ) {
                   return value;
                 }
