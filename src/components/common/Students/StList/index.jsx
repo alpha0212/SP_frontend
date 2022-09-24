@@ -79,7 +79,7 @@ export const StList = () => {
               .map((value, key) => {
                 return (
                   <S.List key={key}>
-                    <S.StName to={`/timedata/${value.id}`}>
+                    <S.StName to={`/myinfo/myplan/${value.id}`}>
                       <S.StText>{value.user_name}</S.StText>
                     </S.StName>
                   </S.List>
