@@ -8,9 +8,8 @@ export const NavbarContainer = styled.div`
   right: 0;
 
   z-index: 2;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
   color: white;
-  background: #ffffff;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -34,19 +33,20 @@ export const NavbarText = styled.div`
 export const NavbarFormGroup = styled.div`
   display: flex;
   width: 100%;
-  padding-bottom: 2rem;
-  padding-left: 80vw;
+  padding-top: 0.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 90vw;
   @media screen and (max-width: 76rem) {
     padding-left: 70vw;
   }
   @media screen and (max-width: 57rem) {
-    padding-left: 68vw;
+    padding-left: 90vw;
   }
   @media screen and (max-width: 40rem) {
     padding-left: 60vw;
   }
   @media screen and (max-width: 32rem) {
-    padding-left: 50vw;
+    padding-left: 68vw;
   }
 `;
 
@@ -67,19 +67,9 @@ export const NavbarLogout = styled(Link)`
 
 export const NavbarA = styled(Link)`
   font-size: 1.5rem;
-  margin-left: 2vw;
-  margin-right: 2vw;
   text-decoration: none;
   color: black;
-  @media screen and (max-width: 76rem) {
-    margin-left: 3vw;
-    margin-right: 3vw;
-  }
 `;
-
-export const NavbarAContainer = styled.div``;
-
-export const loggedInContainer = styled.div``;
 
 export const TextSet = styled.div`
   margin-top: 0.4rem;
@@ -87,5 +77,8 @@ export const TextSet = styled.div`
 
 export const Logout = styled.button`
   border: none;
+  background-color: #fff;
   font-weight: 700;
+  font-size: 1.7rem;
+  margin-top: 0.5rem;
 `;
