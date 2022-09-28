@@ -54,25 +54,24 @@ export const Navbar = () => {
         <S.NavbarFormGroup>
           {!authState.status ? (
             <>
-              <S.NavbarA to="auth/login">로그인</S.NavbarA>
-              <S.NavbarA to="auth/register">회원가입</S.NavbarA>
+              <S.NavbarA to="auth/login">로그인&nbsp;|</S.NavbarA>
+              <S.NavbarA to="auth/register">&nbsp;회원가입</S.NavbarA>
             </>
           ) : (
             <>
               {teaState.t_job === "teacher" ? (
                 <></>
               ) : (
-                <S.NavbarA to="/time/today">My시간</S.NavbarA>
-              )}
-              {teaState.t_job === "teacher" ? (
-                <></>
-              ) : (
-                <Link
-                  style={{ textDecoration: "none", marginRight: "2vw" }}
-                  to={`/myinfo/myplan/${authState.id}`}
+                <div
+                  style={{
+                    color: "black",
+                    paddingTop: "0.5rem",
+                    fontSize: "2rem",
+                    marginRight: "0.3rem",
+                  }}
                 >
-                  <div style={{ color: "black" }}>{authState.user_name}</div>
-                </Link>
+                  {authState.user_name}
+                </div>
               )}
               {teaState.t_job === "teacher" ? (
                 <S.NavbarA to="st/list">
@@ -83,7 +82,7 @@ export const Navbar = () => {
               )}
             </>
           )}
-          {authState.status && <S.Logout onClick={logout}>Logout</S.Logout>}
+          {authState.status && <S.Logout onClick={logout}>로그아웃</S.Logout>}
         </S.NavbarFormGroup>
       </S.NavbarContainer>
     </>
