@@ -16,6 +16,6 @@ export * from "./GraphList";
 export * from "./Header";
 export * from "./List";
 export * from "./TimesFormTemplate";
-export * from "./MyPlanSideBar";
 export * from "./MyInfoTemplate";
 export * from "./ProFile";
+export * from "./Snackbar";
