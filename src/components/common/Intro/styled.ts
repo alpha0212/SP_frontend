@@ -16,7 +16,9 @@ export const MainContainer = styled.div`
 `;
 
 export const SectionContainer = styled.div`
-  margin: 2rem 0 0 0;
+  margin: auto;
+  display: flex;
+  padding: 1rem 0 1rem 0;
 `;
 
 export const AuthContainer = styled.div`
@@ -29,7 +31,7 @@ export const Flex = styled.div`
   margin: auto;
 `;
 
-export const SectionOne = styled.div`
+export const SectionOne = styled.button`
   margin: auto;
   width: 27rem;
   height: 15rem;
@@ -46,7 +48,7 @@ export const SectionOne = styled.div`
   }
 `;
 
-export const SectionTwo = styled.div`
+export const SectionTwo = styled.button`
   margin: auto;
   width: 27rem;
   height: 15rem;
@@ -76,7 +78,7 @@ export const auth = styled.div`
   &:hover {
     border: 1px solid #2cd3e6;
   }
-  @media screen and (max-width: 40rem) {
+  @media screen and (max-width: 50rem) {
     width: 13rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -97,7 +99,7 @@ export const Logout = styled.button`
   &:hover {
     border: 1px solid #2cd3e6;
   }
-  @media screen and (max-width: 40rem) {
+  @media screen and (max-width: 50rem) {
     width: 13rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -119,18 +121,15 @@ export const AuthTitleLink = styled(Link)`
 `;
 
 export const TitleContainer = styled.div`
-  float: left;
-  margin: 3rem 0 0 3rem;
-  @media screen and (min-width: 50rem) {
-    margin: 2rem 0 0 2rem;
-  }
+  margin-left: 2rem;
 `;
 
-export const SectionTitle = styled(Link)`
+export const SectionTitle = styled.div`
   font-size: 2.5rem;
   font-weight: 700;
-  text-decoration: none;
   color: black;
+  width: 100%;
+  text-align: left;
 `;
 
 export const explainContainer = styled.div`
@@ -142,4 +141,6 @@ export const explainBox = styled.div`
   font-weight: 500;
   letter-spacing: 0.05rem;
   font-size: 1.4rem;
+  float: left;
+  text-align: left;
 `;
