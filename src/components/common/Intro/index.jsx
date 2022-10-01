@@ -2,11 +2,36 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { host } from "src/LinkHost";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 
 import * as S from "./styled";
 
 export const Intro = () => {
   const isDeskTop = useMediaQuery({ minWidth: "50rem" });
+  const navigate = useNavigate();
+  const FuncLogout = () => {
+    localStorage.removeItem("accessToken");
+    setAuthState({
+      user_id: "",
+      user_name: "",
+      status: false,
+    });
+  };
+  const FuncLogin = () => {
+    navigate("/auth/login");
+  };
+  const FuncRegister = () => {
+    navigate("/auth/register");
+  };
+  const FuncTime = () => {
+    navigate("/time/today");
+  };
+  const FuncProfile = () => {
+    navigate(`/myinfo/myplan/${authState.user_id}`);
+  };
+  const FuncNotLogged = () => {
+    navigate("/");
+  };
   const [authState, setAuthState] = useState({
     id: 0,
     user_id: "",
@@ -48,14 +73,7 @@ export const Intro = () => {
    * "로그인해야 이용가능한 서비스입니다!" 라는 문장을 로그인 상태에 따라
    * 바꿔서 보여줄 수 있다.
    */
-  const FuncLogout = () => {
-    localStorage.removeItem("accessToken");
-    setAuthState({
-      user_id: "",
-      user_name: "",
-      status: false,
-    });
-  };
+
   return (
     <S.Background>
       {!authState.status ? (
@@ -69,12 +87,12 @@ export const Intro = () => {
         {!authState.status ? (
           <S.AuthContainer>
             <S.Flex>
-              <S.auth>
-                <S.AuthTitleLink to="/auth/login">로그인</S.AuthTitleLink>
-              </S.auth>
-              <S.auth>
-                <S.AuthTitleLink to="/auth/register">회원가입</S.AuthTitleLink>
-              </S.auth>
+              <S.Logout onClick={FuncLogin}>
+                <S.AuthTitle>로그인</S.AuthTitle>
+              </S.Logout>
+              <S.Logout onClick={FuncRegister}>
+                <S.AuthTitle>회원가입</S.AuthTitle>
+              </S.Logout>
             </S.Flex>
           </S.AuthContainer>
         ) : (
@@ -92,11 +110,9 @@ export const Intro = () => {
           </S.AuthContainer>
         )}
         <S.SectionContainer>
-          <S.SectionOne>
+          <S.SectionOne onClick={FuncTime}>
             <S.TitleContainer>
-              <S.SectionTitle to="/time/today">
-                공부시간 적으러 가기
-              </S.SectionTitle>
+              <S.SectionTitle>공부시간 적으러 가기</S.SectionTitle>
               <S.explainContainer>
                 <S.explainBox>
                   오늘 자신의 일과를 적어주세요.
@@ -107,16 +123,11 @@ export const Intro = () => {
           </S.SectionOne>
         </S.SectionContainer>
         <S.SectionContainer>
-          <S.SectionTwo>
+          <S.SectionTwo
+            onClick={authState.status ? FuncProfile : FuncNotLogged}
+          >
             <S.TitleContainer>
-              {authState.status === true ? (
-                <S.SectionTitle to={`/myinfo/myplan/${authState.user_id}`}>
-                  프로필
-                </S.SectionTitle>
-              ) : (
-                <S.SectionTitle to={`/`}>프로필</S.SectionTitle>
-              )}
-
+              <S.SectionTitle>프로필</S.SectionTitle>
               <S.explainContainer>
                 {isDeskTop ? (
                   <S.explainBox>
