@@ -9,6 +9,7 @@ import * as S from "./styled";
 
 export interface RegisterFormInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
+
 export const RegisterForm = React.forwardRef<
   HTMLInputElement,
   RegisterFormInputProps
@@ -16,6 +17,9 @@ export const RegisterForm = React.forwardRef<
   const navigate = useNavigate();
 
   const [checked, setChecked] = useState(false);
+  const checkHandler = () => {
+    setChecked(!checked);
+  };
   let initialValues = {
     user_name: "",
     user_id: "",
@@ -33,12 +37,10 @@ export const RegisterForm = React.forwardRef<
     user_agree: Yup.string().required(),
   });
   const onSubmit = (data: any) => {
-    if (checked === true) {
-      axios.post(`http://${host}:8080/auth`, data).then(() => {
-        console.log(data);
-        navigate("/auth/login");
-      });
-    }
+    axios.post(`http://${host}:8080/auth`, data).then(() => {
+      console.log(data);
+      navigate("/auth/login");
+    });
   };
 
   useEffect(() => {
@@ -70,9 +72,10 @@ export const RegisterForm = React.forwardRef<
               />
               <S.AgreeCheck
                 type="checkbox"
+                id="user_agree"
                 name="user_agree"
                 onClick={valueInsert}
-                checked={enableButton === true ? true : false}
+                onChange={checkHandler}
               />
               개인정보 수집 및 이용 동의<strong>(필수)</strong>
               <Button
