@@ -16,15 +16,16 @@ export const RegisterForm = React.forwardRef<
 >(({ autoComplete, placeholder, type, name }, ref) => {
   const navigate = useNavigate();
 
-  const [checked, setChecked] = useState(false);
-  const checkHandler = () => {
-    setChecked(!checked);
-  };
   let initialValues = {
     user_name: "",
     user_id: "",
     user_pw: "",
     user_agree: "checked",
+  };
+  const [checked, setChecked] = useState(false);
+  const checkHandler = () => {
+    setChecked(!checked);
+    initialValues.user_agree = "";
   };
   const valueInsert = () => {
     setChecked(true);
@@ -49,7 +50,7 @@ export const RegisterForm = React.forwardRef<
       alert("로그인되어 있습니다.");
     }
   }, []);
-  const enableButton = checked === true ? true : false;
+  const enableButton = checked === false ? true : false;
   return (
     <S.FormInputContainer ref={ref}>
       <S.InputElementContainer>
@@ -81,7 +82,7 @@ export const RegisterForm = React.forwardRef<
               <Button
                 disabled={enableButton}
                 style={{
-                  backgroundColor: enableButton === true ? "black" : "#afafaf",
+                  backgroundColor: enableButton === false ? "black" : "#afafaf",
                 }}
                 type="submit"
               >
