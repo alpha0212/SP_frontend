@@ -10,7 +10,7 @@ import {
 import * as S from "./styled";
 
 export const StList = () => {
-  const [listOfUsers, setListOfUsers] = useState({});
+  const [listOfUsers, setListOfUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [teaState, setTeaState] = useState({
     t_job: "",
@@ -49,13 +49,13 @@ export const StList = () => {
   }, []);
   return (
     <S.Container>
-      {teaState.t_job === "teacher" ? (
+      {teaState.status ? (
         <>
           <S.SearchContainer>
             <S.Search>
               <S.SearchInput
-                type="text"
-                placeholder="학생 검색"
+                type={"text"}
+                placeholder={"학생 검색"}
                 onChange={(event) => {
                   setSearchTerm(event.target.value);
                 }}
@@ -81,7 +81,7 @@ export const StList = () => {
               .map((value, key) => {
                 return (
                   <S.List key={key}>
-                    <S.StName to={`/myinfo/myplan/${value.id}`}>
+                    <S.StName to={`/myinfo/myplan/${value.user_id}`}>
                       <S.StText>{value.user_name}</S.StText>
                     </S.StName>
                   </S.List>
