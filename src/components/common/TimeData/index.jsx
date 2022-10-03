@@ -18,19 +18,34 @@ export const TimeData = () => {
     user_id: "",
     status: false,
   });
+  const [teaState, setTeaState] = useState({
+    status: false,
+  });
   const [listOfPosts, setListOfPosts] = useState({
     createdAt: "",
   });
-  const lifeStyle = useMemo(
+  const lifeStyleAm = useMemo(() => [
+    {
+      id: 1,
+      habitAm: "기상시간AM",
+      habitTimeAm: habitData.morningAm,
+    },
+    {
+      id: 2,
+      habitAm: "취침시간AM",
+      habitTimeAm: habitData.nightAm,
+    },
+  ]);
+  const lifeStylePm = useMemo(
     () => [
       {
         id: 1,
-        habit: "기상시간H",
+        habit: "기상시간PM",
         habitTime: habitData.morning,
       },
       {
         id: 2,
-        habit: "취침시간H",
+        habit: "취침시간PM",
         habitTime: habitData.night,
       },
       {
@@ -50,12 +65,12 @@ export const TimeData = () => {
     () => [
       {
         id: 1,
-        goal: "목표기상시간H",
+        goal: "목표기상시간AM",
         goalTime: goalData.GoalMorning,
       },
       {
         id: 2,
-        goal: "목표취침시간H",
+        goal: "목표취침시간PM",
         goalTime: goalData.GoalNight,
       },
     ],
@@ -134,42 +149,34 @@ export const TimeData = () => {
   );
   const lifeStyleData = useMemo(
     () => ({
-      labels: lifeStyle.map((val) => val.habit),
+      labels: ["기상시간", "취침시간", "낮잠시간", "휴식시간"],
+
       datasets: [
         {
-          label: "시간데이터",
-          data: lifeStyle.map((val) => val.habitTime),
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-            "rgba(255, 205, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(84, 221, 154, 0.2)",
-          ],
-          borderColor: [
-            "rgb(255, 99, 132)",
-            "rgb(255, 159, 64)",
-            "rgb(255, 205, 86)",
-            "rgb(75, 192, 192)",
-            "rgb(54, 162, 235)",
-            "rgb(153, 102, 255)",
-            "rgb(84, 221, 154)",
-          ],
-          borderWidth: 1,
+          label: "오전 시간데이터",
+          data: lifeStyleAm.map((val) => val.habitTimeAm),
+          backgroundColor: ["rgb(88, 104, 252, 0.2)"],
+          borderColor: ["rgb(88, 104, 252)"],
+        },
+        {
+          label: "오후 시간데이터",
+          data: lifeStylePm.map((val) => val.habitTime),
+          backgroundColor: ["rgb(77, 67, 69, 0.2)"],
+          borderColor: ["rgb(77, 67, 69)"],
         },
       ],
     }),
-    [lifeStyle]
+    [lifeStylePm, lifeStyleAm]
   );
   const time = useMemo(
     () => ({
       labels: subData.map((val) => val.sub),
       datasets: [
+        // 데이터셋으로 하나씩 만들면 됨 그래서 데이터 셋 안에 내용을 7개만들면 댐
         {
-          label: "시간데이터",
-          data: subData.map((val) => val.time),
+          label: "국어",
+          borderRadius: 10,
+          data: subData.map((val) => val.time), //좀 불편하긴 한데 그냥 하나 하나 만들어야 할 거 같기도 하고
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(255, 159, 64, 0.2)",
@@ -190,6 +197,7 @@ export const TimeData = () => {
           ],
           borderWidth: 1,
         },
+        {},
       ],
     }),
     [subData]
@@ -205,10 +213,14 @@ export const TimeData = () => {
       .then((res) => {
         if (res.data.error) {
           setAuthState({ ...authState, status: false });
+          setTeaState({ ...teaState, status: false });
         } else {
           setAuthState({
             id: res.data.id,
             user_id: res.data.user_id,
+            status: true,
+          });
+          setTeaState({
             status: true,
           });
         }
@@ -224,7 +236,8 @@ export const TimeData = () => {
       setTimeData(res.data);
     });
   }, []);
-  console.log(listOfPosts);
+  console.log(authState.user_id, "다르자나");
+  console.log(listOfPosts.user_id, "개세야");
   return (
     <>
       <S.TimeDataContainer>
@@ -235,20 +248,43 @@ export const TimeData = () => {
         </S.BackSpaceContainer>
         <S.TimeTextContainer>
           <S.TimeText>
-            🗓 {listOfPosts.createdAt.slice(5, 10)} | {listOfPosts.UserId}
+            {listOfPosts.user_id}
+            {listOfPosts.createdAt.slice(5, 7)}월{" "}
+            {listOfPosts.createdAt.slice(8, 10)}일 데이터
           </S.TimeText>
         </S.TimeTextContainer>
+        <S.TitleContainer style={{ marginTop: "8rem" }}>
+          <S.TitleText>공부시간</S.TitleText>
+        </S.TitleContainer>
         <HorizontalContainer>
           <Horizontal />
         </HorizontalContainer>
-        {authState.id === listOfPosts.UserId ? (
+        {authState.user_id === listOfPosts.user_id || teaState === true ? (
           <S.TimeDataBoxContainer>
-            <BarGraph chartData={time} />
+            <S.GraphSize2>
+              <BarGraph chartData={time} />
+            </S.GraphSize2>
+            <S.TitleContainer style={{ marginTop: "8rem" }}>
+              <S.TitleText>생활습관</S.TitleText>
+            </S.TitleContainer>
             <HorizontalContainer>
               <Horizontal />
             </HorizontalContainer>
-            <LineGraph chartData={lifeStyleData} />
-            <CircleGraph chartData={goalGraphData} />
+            <S.GraphSize2>
+              <LineGraph chartData={lifeStyleData} />
+            </S.GraphSize2>
+            <S.TitleContainer style={{ marginTop: "8rem" }}>
+              <S.TitleText>습관목표</S.TitleText>
+            </S.TitleContainer>
+            <HorizontalContainer>
+              <Horizontal />
+            </HorizontalContainer>
+            <S.GraphSize>
+              <CircleGraph
+                style={{ height: "60%" }}
+                chartData={goalGraphData}
+              />
+            </S.GraphSize>
           </S.TimeDataBoxContainer>
         ) : (
           <div
