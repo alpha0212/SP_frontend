@@ -143,4 +143,5 @@ export const explainBox = styled.div`
   font-size: 1.4rem;
   float: left;
   text-align: left;
+  color: #8e8e8e;
 `;

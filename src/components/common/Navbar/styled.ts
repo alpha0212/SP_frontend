@@ -10,6 +10,7 @@ export const NavbarContainer = styled.div`
   z-index: 2;
   padding-top: 2rem;
   color: white;
+  background-color: #f4f8fd;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
@@ -35,19 +36,6 @@ export const NavbarFormGroup = styled.div`
   width: 100%;
   padding-top: 0.5rem;
   padding-bottom: 2.5rem;
-  padding-left: 90vw;
-  @media screen and (max-width: 76rem) {
-    padding-left: 70vw;
-  }
-  @media screen and (max-width: 57rem) {
-    padding-left: 90vw;
-  }
-  @media screen and (max-width: 40rem) {
-    padding-left: 60vw;
-  }
-  @media screen and (max-width: 32rem) {
-    padding-left: 68vw;
-  }
 `;
 
 export const NavbarMyPlanContainer = styled.div`
@@ -72,13 +60,20 @@ export const NavbarA = styled(Link)`
 `;
 
 export const TextSet = styled.div`
-  margin-top: 0.4rem;
+  margin-top: 0.9rem;
 `;
 
 export const Logout = styled.button`
   border: none;
-  background-color: #fff;
-  font-weight: 700;
+  font-weight: 700x;
   font-size: 1.7rem;
   margin-top: 0.5rem;
+  background-color: #f4f8fd;
+`;
+
+export const Logo = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
 `;

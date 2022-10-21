@@ -1,30 +1,24 @@
 import axios from "axios";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "src/helper/AuthContext";
 import { Button } from "src/components/common";
+import { host } from "src/LinkHost";
 import * as S from "./styled";
 
 export const FormInput = () => {
   const [user_id, setUserid] = useState("");
   const [user_pw, setUserpw] = useState("");
-  const { setAuthState } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const login = () => {
     const data = { user_id: user_id, user_pw: user_pw };
-    axios.post("http://localhost:8080/auth/login", data).then((response) => {
+    axios.post(`http://${host}:8080/auth/login`, data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {
         navigate("/");
         localStorage.setItem("accessToken", response.data.token);
-        setAuthState({
-          user_id: response.data.user_id,
-          id: response.data.id,
-          status: false,
-        });
       }
     });
   };
@@ -69,7 +63,7 @@ export const FormInput = () => {
                 <S.goTeacher>선생님</S.goTeacher>로그인
               </S.Choose>
               <S.verticalChoose>|</S.verticalChoose>
-              <S.Choose to="#">비밀번호 변경</S.Choose>
+              <S.Choose to="/">Skyplanner</S.Choose>
             </S.ChooseMenu>
           </S.InputContainer>
         </S.InputElementContainer>

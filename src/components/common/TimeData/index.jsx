@@ -197,7 +197,6 @@ export const TimeData = () => {
           ],
           borderWidth: 1,
         },
-        {},
       ],
     }),
     [subData]
@@ -236,8 +235,7 @@ export const TimeData = () => {
       setTimeData(res.data);
     });
   }, []);
-  console.log(authState.user_id, "다르자나");
-  console.log(listOfPosts.user_id, "개세야");
+  console.log(teaState, "1");
   return (
     <>
       <S.TimeDataContainer>

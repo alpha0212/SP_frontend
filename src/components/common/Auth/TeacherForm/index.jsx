@@ -3,6 +3,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "src/helper/AuthContext";
 import { Button } from "src/components/common";
+import { host } from "src/LinkHost";
+
 import * as S from "./styled";
 
 export const TeacherForm = () => {
@@ -15,7 +17,7 @@ export const TeacherForm = () => {
 
   const login = () => {
     const data = { t_id: t_id, t_pw: t_pw, t_job: t_job };
-    axios.post("http://localhost:8080/teacher/login", data).then((response) => {
+    axios.post(`http://${host}:8080/teacher/login`, data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {

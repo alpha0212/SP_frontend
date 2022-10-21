@@ -38,7 +38,6 @@ export const InputElement = styled.input`
 `;
 
 export const InputElementContainer = styled.div`
-  background-color: #ffffff;
   margin-bottom: 1.2rem;
 `;
 export const InputContainer = styled.div``;

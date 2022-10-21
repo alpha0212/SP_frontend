@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 
 import {
@@ -8,8 +8,6 @@ import {
   TimesFormTemplate,
   Header,
 } from "src/components";
-
-import * as S from "./styled";
 
 export const TimesPage = () => {
   const location = useLocation();

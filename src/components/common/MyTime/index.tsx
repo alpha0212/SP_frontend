@@ -1,15 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 
 import * as S from "./styled";
-import {
-  MyPlanSideBar,
-  TitleText,
-  TodayTime,
-  Header,
-  List,
-  HabitTime,
-} from "src/components";
+import { TitleText, Header, List } from "src/components";
 export const MyTime: React.FC = () => {
   const isDesktop = useMediaQuery({ maxWidth: "35rem" });
   const isDesktop2 = useMediaQuery({ minWidth: "40rem" });
@@ -21,7 +14,6 @@ export const MyTime: React.FC = () => {
       {isDesktop2 && (
         <>
           <S.FlexContainer>
-            <MyPlanSideBar />
             <S.MyTimeContainer>
               <TitleText />
               <S.TimeGraphContainer></S.TimeGraphContainer>

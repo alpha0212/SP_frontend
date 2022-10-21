@@ -38,7 +38,8 @@ export const InputElement = styled(Field)`
 `;
 
 export const InputElementContainer = styled.div`
-  background-color: #fcfcfc;
   margin-bottom: 5.4rem;
 `;
 export const InputContainer = styled.div``;
+
+export const AgreeCheck = styled.input``;

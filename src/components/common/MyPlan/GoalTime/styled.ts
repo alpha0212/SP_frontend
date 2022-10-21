@@ -46,6 +46,7 @@ export const InputTime = styled(Field)`
   text-align: center;
   margin-top: 0.2rem;
   margin-bottom: 2rem;
+  font-size: 1.6rem;
 `;
 
 export const InputTImeTitle = styled.div`

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { host } from "src/LinkHost";
 
 import * as S from "./styled";
 
@@ -11,7 +12,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/auth/auth", {
+      .get(`http://${host}:8080/auth/auth`, {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },
@@ -38,13 +39,6 @@ export const Navbar = () => {
       <S.NavbarContainer>
         <S.NavbarFormGroup>
           <S.Logo>Skyplanner</S.Logo>
-          {teaState.t_job === "teacher" ? (
-            <S.NavbarA to="st/list">
-              <S.TextSet>학생관리</S.TextSet>
-            </S.NavbarA>
-          ) : (
-            <></>
-          )}
         </S.NavbarFormGroup>
       </S.NavbarContainer>
     </>

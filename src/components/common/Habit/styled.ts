@@ -38,6 +38,7 @@ export const HorizontalContainer = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
+  padding-bottom: 17.5rem;
 `;
 
 export const TimeGraphContainer = styled.div`

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as S from "./styled";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { host } from "src/LinkHost";
 
 export interface MyInfoTemplateProps {
   infoType: "myplan" | "profile";
@@ -15,10 +16,10 @@ export const MyInfoTemplate: React.FC<MyInfoTemplateProps> = ({
   profile,
 }) => {
   const navigate = useNavigate();
-  const [authState, setAuthState] = useState({ id: "", status: false });
+  const [authState, setAuthState] = useState({ user_id: "", status: false });
   useEffect(() => {
     axios
-      .get("http://localhost:8080/auth/auth", {
+      .get(`http://${host}:8080/auth/auth`, {
         headers: {
           accessToken: localStorage.getItem("accessToken") as any,
         },
@@ -28,7 +29,7 @@ export const MyInfoTemplate: React.FC<MyInfoTemplateProps> = ({
           setAuthState({ ...authState, status: false });
         } else {
           setAuthState({
-            id: response.data.id,
+            user_id: response.data.user_id,
             status: true,
           });
         }
@@ -47,12 +48,12 @@ export const MyInfoTemplate: React.FC<MyInfoTemplateProps> = ({
           }}
         >
           <S.MyPlanContainer infoType="myplan">
-            <S.TodayStudy to={`/myinfo/myplan/${authState.id}`}>
+            <S.TodayStudy to={`/myinfo/myplan/${authState.user_id}`}>
               마이플랜
             </S.TodayStudy>
           </S.MyPlanContainer>
           <S.ProfileContainer infoType="profile">
-            <S.TodayStudy to={`/myinfo/profile/${authState.id}`}>
+            <S.TodayStudy to={`/myinfo/profile/${authState.user_id}`}>
               프로필
             </S.TodayStudy>
           </S.ProfileContainer>

@@ -6,6 +6,12 @@ export const basicInfo = styled.div``;
 
 export const listOfPosts = styled.div``;
 
+export const AllContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Slider = styled.div`
   display: flex;
   width: 100%;
@@ -26,7 +32,8 @@ export const TotalContainer = styled.div`
 
 export const DayContainer = styled.div`
   @media screen and (max-width: 40rem) {
-    width: 100%;
+    display: flex;
+    margin: auto;
   }
   max-height: 12rem;
   display: flex;

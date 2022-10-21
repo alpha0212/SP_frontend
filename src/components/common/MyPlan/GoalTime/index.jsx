@@ -1,32 +1,33 @@
 import React, { useEffect } from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Button } from "src/components";
+import { host } from "src/LinkHost";
 
 import * as S from "./styled";
 
 export const GoalTime = () => {
   const navigate = useNavigate();
   const initialValues = {
-    GoalMorning: "",
-    GoalNight: "",
+    GoalMorning: 0,
+    GoalNight: 0,
   };
   useEffect(() => {
     if (!localStorage.getItem("accessToken")) {
-      navigate("/auth/login");
+      navigate("/");
       alert("로그인해야 이용 가능한 서비스입니다.");
     }
   }, []);
   const validationSchema = Yup.object().shape({
-    GoalMorning: Yup.string().required("목표기상시간"),
-    GoalNight: Yup.string().required("목표취침시간"),
+    GoalMorning: Yup.number().required("목표기상시간"),
+    GoalNight: Yup.number().required("목표취침시간"),
   });
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:8080/mygoal", data, {
+      .post(`http://${host}:8080/mygoal`, data, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then((response) => {

@@ -17,7 +17,6 @@ export const horizontal_scroll = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  overflow: hidden;
 `;
 
 export const reviews_container = styled.div`

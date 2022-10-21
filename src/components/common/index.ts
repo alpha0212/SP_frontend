@@ -19,3 +19,4 @@ export * from "./TimesFormTemplate";
 export * from "./MyInfoTemplate";
 export * from "./ProFile";
 export * from "./Snackbar";
+export * from "./TeacherMenu";

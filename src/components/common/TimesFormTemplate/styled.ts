@@ -41,7 +41,7 @@ export const FlexContainer = styled.div`
 `;
 
 export const ListOfMenu = styled.div`
-  padding-top: 2.25rem;
+  padding-top: 1.25rem;
   box-shadow: 0rem 0.3rem 0.6rem 0rem #c7c7c729;
   display: flex;
 `;
@@ -52,7 +52,7 @@ export const TodayStudyContainer = styled.div<{
   margin-right: 3rem;
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
   @media screen and (min-width: 76rem) {
     margin-right: 20rem;
@@ -62,10 +62,10 @@ export const TodayStudyContainer = styled.div<{
 export const HabitSetContainer = styled.div<{
   formType: "habit";
 }>`
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 `;
 export const MyGoalContainer = styled.div<{
@@ -74,7 +74,7 @@ export const MyGoalContainer = styled.div<{
   margin-left: 3rem;
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
   @media screen and (min-width: 76rem) {
     margin-left: 20rem;

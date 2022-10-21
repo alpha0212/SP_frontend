@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import * as S from "./styled";
-import { MyPlanSideBar, TitleText, HabitTime } from "src/components";
+import { TitleText, HabitTime } from "src/components";
 export const Habit: React.FC = () => {
   const isDesktop = useMediaQuery({ maxWidth: "35rem" });
   const isDesktop2 = useMediaQuery({ minWidth: "40rem" });
@@ -60,7 +60,6 @@ export const Habit: React.FC = () => {
         </S.ListOfMenu>
       )}
       <S.FlexContainer>
-        {isDesktop2 && <MyPlanSideBar />}
         <S.MyTimeContainer>
           {isDesktop2 && <TitleText />}
           <S.TimeGraphContainer></S.TimeGraphContainer>

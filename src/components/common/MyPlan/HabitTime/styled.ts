@@ -46,6 +46,7 @@ export const InputTime = styled(Field)`
   text-align: center;
   margin-top: 0.2rem;
   margin-bottom: 2rem;
+  font-size: 1.6rem;
 `;
 
 export const InputTImeTitle = styled.div`
@@ -55,4 +56,20 @@ export const InputTImeTitle = styled.div`
 
 export const InputTimeTitleMin = styled.div`
   padding-top: 2rem;
+`;
+
+export const InputFlexContainer = styled.div`
+  display: flex;
+`;
+
+export const InputFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem 0 2rem;
+`;
+
+export const MarginCenter = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 `;

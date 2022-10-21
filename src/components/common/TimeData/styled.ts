@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const TimeDataContainer = styled.div`
   font-family: Pretendard;
@@ -6,7 +7,7 @@ export const TimeDataContainer = styled.div`
 `;
 
 export const TimeTextContainer = styled.div`
-  padding-left: 10vw;
+  padding-left: 5vw;
   padding-top: 5rem;
 `;
 
@@ -31,4 +32,39 @@ export const TimeDataText = styled.div`
   margin-left: 3rem;
   padding-top: 3rem;
   font-size: 3rem;
+`;
+
+export const BackSpaceContainer = styled.div`
+  margin-left: 1rem;
+  margin-top: 1rem;
+`;
+
+export const BackSpace = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export const TitleContainer = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+export const TitleText = styled.div`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+`;
+
+export const GraphSize = styled.div`
+  @media screen and (min-width: 50rem) {
+    width: 40%;
+    margin: auto;
+  }
+`;
+
+export const GraphSize2 = styled.div`
+  @media screen and (min-width: 50rem) {
+    width: 80%;
+    margin: auto;
+  }
 `;

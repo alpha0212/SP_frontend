@@ -32,6 +32,9 @@ export const Intro = () => {
   const FuncNotLogged = () => {
     navigate("/");
   };
+  const FuncSt = () => {
+    navigate("/st");
+  };
   const [authState, setAuthState] = useState({
     id: 0,
     user_id: "",
@@ -100,7 +103,11 @@ export const Intro = () => {
             <S.Flex>
               <S.auth>
                 <S.AuthTitle style={{ marginTop: "0.2rem" }}>
-                  {authState.user_name}
+                  {teaState.t_job === "teacher" ? (
+                    <div onClick={FuncSt}>학생관리</div>
+                  ) : (
+                    authState.user_name
+                  )}
                 </S.AuthTitle>
               </S.auth>
               <S.Logout onClick={FuncLogout}>

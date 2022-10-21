@@ -32,8 +32,8 @@ export const Horizontal = styled.div`
 
 export const HorizontalContainer = styled.div`
   padding-top: 4vh;
-  padding-left: 9vw;
-  padding-right: 10vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 `;
 
 export const FlexContainer = styled.div`

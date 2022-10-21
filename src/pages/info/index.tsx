@@ -1,15 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import {
-  MyInfoTemplate,
-  Header,
-  ShowMyPlan,
-  ProFile,
-  TimeData,
-} from "src/components";
-
-import * as S from "./styled";
+import { MyInfoTemplate, Header, ShowMyPlan, ProFile } from "src/components";
 
 export const InfoPage = () => {
   const location = useLocation();

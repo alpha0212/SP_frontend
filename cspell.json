@@ -1,7 +1,23 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["browserslist", "TTFB", "craco", "spoqa"],
+  "words": [
+    "browserslist",
+    "craco",
+    "Formik",
+    "myinfo",
+    "myplan",
+    "Sert",
+    "Skyplanner",
+    "spoqa",
+    "timedata",
+    "toastify",
+    "TTFB",
+    "Userid",
+    "Userpw"
+  ],
   "flagWords": [],
-  "ignorePaths": ["node_modules/**"]
+  "ignorePaths": [
+    "node_modules/**"
+  ]
 }

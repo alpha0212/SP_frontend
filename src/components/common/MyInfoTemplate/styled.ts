@@ -38,10 +38,11 @@ export const HorizontalContainer = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
+  padding-bottom: 22.5rem;
 `;
 
 export const ListOfMenu = styled.div`
-  padding-top: 2.25rem;
+  padding-top: 1.25rem;
   box-shadow: 0rem 0.3rem 0.6rem 0rem #c7c7c729;
   display: flex;
 `;
@@ -50,21 +51,27 @@ export const MyPlanContainer = styled.div<{
   infoType: "myplan";
 }>`
   margin-right: 12rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  @media screen and (max-width: 40rem) {
+    margin: 0 4rem 0 0;
+  }
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 1.1rem 2rem;
   }
 `;
 
 export const ProfileContainer = styled.div<{
   infoType: "profile";
 }>`
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
   margin-left: 12rem;
+  @media screen and (max-width: 40rem) {
+    margin: 0 0 0 5rem;
+  }
   & > a.active {
     border-bottom: 0.2rem solid #2cd3e6;
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 1.1rem 2rem;
   }
 `;
 //
@@ -84,6 +91,9 @@ export const MyGoal = styled(NavLink)`
 `;
 
 export const ListTypeContainer = styled.div`
+  @media screen and (max-width: 40rem) {
+    padding-right: 3rem;
+  }
   text-align: center;
   display: flex;
   margin: auto;
