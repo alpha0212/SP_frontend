@@ -19,6 +19,7 @@ export const TimeData = () => {
     status: false,
   });
   const [teaState, setTeaState] = useState({
+    t_job: "",
     status: false,
   });
   const [listOfPosts, setListOfPosts] = useState({
@@ -48,6 +49,27 @@ export const TimeData = () => {
         habit: "취침시간PM",
         habitTime: habitData.night,
       },
+    ],
+    [habitData]
+  );
+  const breakTime = useMemo(
+    () => [
+      {
+        id: 1,
+        habit: "휴식시간H",
+        habitTime: habitData.break,
+      },
+    ],
+    [habitData]
+  );
+  const lunchSleep = useMemo(
+    () => [
+      {
+        id: 1,
+      },
+      {
+        id: 2,
+      },
       {
         id: 3,
         habit: "낮잠시간H",
@@ -55,8 +77,6 @@ export const TimeData = () => {
       },
       {
         id: 4,
-        habit: "휴식시간H",
-        habitTime: habitData.break,
       },
     ],
     [habitData]
@@ -164,9 +184,21 @@ export const TimeData = () => {
           backgroundColor: ["rgb(77, 67, 69, 0.2)"],
           borderColor: ["rgb(77, 67, 69)"],
         },
+        {
+          label: "낮잠시간",
+          data: lunchSleep.map((val) => val.habitTime),
+          backgroundColor: ["rgb(188, 188, 188, 0.2"],
+          borderColor: ["rgb(188, 188, 188)"],
+        },
+        {
+          label: "휴식시간",
+          data: breakTime.map((val) => val.habitTime),
+          backgroundColor: ["rgb(133, 205, 130, 0.2"],
+          borderColor: ["rgb(133, 205, 130)"],
+        },
       ],
     }),
-    [lifeStylePm, lifeStyleAm]
+    [lifeStylePm, lifeStyleAm, breakTime, lunchSleep]
   );
   const time = useMemo(
     () => ({
@@ -221,6 +253,7 @@ export const TimeData = () => {
           });
           setTeaState({
             status: true,
+            t_job: res.data.t_job,
           });
         }
       });
@@ -257,7 +290,8 @@ export const TimeData = () => {
         <HorizontalContainer>
           <Horizontal />
         </HorizontalContainer>
-        {authState.user_id === listOfPosts.user_id || teaState === true ? (
+        {authState.user_id === listOfPosts.user_id ||
+        teaState.t_job === "teacher" ? (
           <S.TimeDataBoxContainer>
             <S.GraphSize2>
               <BarGraph chartData={time} />

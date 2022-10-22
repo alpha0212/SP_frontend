@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { TimeData, Footer, TeacherInput } from "src/components";
-import { StList } from "src/components";
+import { StList, StMenu } from "src/components";
 import { MainPage, TimesPage } from "./pages";
 import { InfoPage } from "./pages/info";
 import { AuthPage } from "./pages/auth";
@@ -31,6 +31,8 @@ export const App: React.FC = () => {
           <Route path="profile/:id" element={<InfoPage />} />
         </Route>
         <Route path="st" element={<StList />} />
+        <Route path="menu" element={<StMenu />} />
+
         <Route path="teacher">
           <Route path="input" element={<TeacherInput />} />
         </Route>

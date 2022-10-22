@@ -5,6 +5,8 @@ import { Button } from "src/components/common";
 import { host } from "src/LinkHost";
 import * as S from "./styled";
 
+// assets
+
 export const FormInput = () => {
   const [user_id, setUserid] = useState("");
   const [user_pw, setUserpw] = useState("");
