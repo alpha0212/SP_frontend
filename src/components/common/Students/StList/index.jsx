@@ -10,6 +10,7 @@ import {
 import * as S from "./styled";
 
 export const StList = () => {
+  //mouseEvent -> onMouse~
   const [listOfUsers, setListOfUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [teaState, setTeaState] = useState({
