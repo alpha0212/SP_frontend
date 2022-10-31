@@ -23,14 +23,3 @@ export const Header = styled.div`
   padding-bottom: 2.2rem;
   letter-spacing: 0.1rem;
 `;
-
-export const BackSpaceContainer = styled(Link)`
-  margin-bottom: 0.5rem;
-  text-decoration: none;
-  color: black;
-`;
-
-export const BackSpace = styled.div`
-  font-weight: 700;
-  font-size: 2rem;
-`;

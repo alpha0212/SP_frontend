@@ -19,6 +19,29 @@ export const Label = styled.p`
 export const InputElement = styled.input`
   border: none;
   outline: none;
+  width: 32rem;
+  height: 5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  background: none;
+  ::placeholder {
+    color: #afafaf;
+  }
+  @media screen and (max-width: 40rem) {
+    width: 32.8rem;
+    height: 5rem;
+    font-size: 1.6rem;
+  }
+`;
+
+export const InputElementDivContainer = styled.div`
+  display: flex;
+`;
+
+export const InputElementDiv = styled.div`
+  border: none;
+  outline: none;
   width: 41rem;
   height: 5rem;
   font-size: 1.6rem;
@@ -26,6 +49,7 @@ export const InputElement = styled.input`
   border: 0.2rem solid #c6c6c6;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
+  background: #fffffc;
   box-shadow: 0.1rem 0.4rem 0.3rem 0 rgba(213, 223, 247, 0.15);
   ::placeholder {
     color: #afafaf;
@@ -71,4 +95,15 @@ export const Choose = styled(Link)`
 export const goTeacher = styled.div`
   color: black;
   font-weight: 500;
+`;
+
+export const LoginLogo = styled.img`
+  object-fit: cover;
+  height: 2.5rem;
+`;
+
+export const LogoContainer = styled.div`
+  margin-top: 1.25rem;
+  margin-left: 0.5rem;
+  width: 3rem;
 `;

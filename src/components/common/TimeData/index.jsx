@@ -272,11 +272,6 @@ export const TimeData = () => {
   return (
     <>
       <S.TimeDataContainer>
-        <S.BackSpaceContainer>
-          <S.BackSpace to={`/myinfo/myplan/${authState.user_id}`}>
-            &lt;-
-          </S.BackSpace>
-        </S.BackSpaceContainer>
         <S.TimeTextContainer>
           <S.TimeText>
             {listOfPosts.user_id}

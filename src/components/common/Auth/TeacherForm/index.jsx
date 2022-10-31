@@ -4,8 +4,19 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "src/helper/AuthContext";
 import { Button } from "src/components/common";
 import { host } from "src/LinkHost";
+import {
+  InputElement,
+  InputElementDiv,
+  InputElementDivContainer,
+  LoginLogo,
+  LogoContainer,
+} from "../FormInput/styled";
 
 import * as S from "./styled";
+
+// assets
+import LoginIconPNG from "src/assets/LoginIcon.png";
+import PwIconPNG from "src/assets/PwIcon.png";
 
 export const TeacherForm = () => {
   const [t_id, setTid] = useState("");
@@ -48,20 +59,34 @@ export const TeacherForm = () => {
         <S.InputElementContainer>
           <S.InputContainer>
             <S.empty />
-            <S.InputElement
-              type="text"
-              onChange={(event) => {
-                setTid(event.target.value);
-              }}
-              placeholder="아이디"
-            />
-            <S.InputElement
-              type="password"
-              onChange={(event) => {
-                setTpw(event.target.value);
-              }}
-              placeholder="비밀번호"
-            />
+            <InputElementDiv>
+              <InputElementDivContainer>
+                <LogoContainer>
+                  <LoginLogo src={LoginIconPNG} />
+                </LogoContainer>
+                <InputElement
+                  type="text"
+                  onChange={(event) => {
+                    setTid(event.target.value);
+                  }}
+                  placeholder="아이디"
+                />
+              </InputElementDivContainer>
+            </InputElementDiv>
+            <InputElementDiv>
+              <InputElementDivContainer>
+                <LogoContainer>
+                  <LoginLogo src={PwIconPNG} />
+                </LogoContainer>
+                <InputElement
+                  type="password"
+                  onChange={(event) => {
+                    setTpw(event.target.value);
+                  }}
+                  placeholder="비밀번호"
+                />
+              </InputElementDivContainer>
+            </InputElementDiv>
             <S.LabelContainer>
               <S.Label>아래에</S.Label>
               <S.teacher>‘teacher’</S.teacher>

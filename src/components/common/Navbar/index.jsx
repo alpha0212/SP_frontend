@@ -38,7 +38,7 @@ export const Navbar = () => {
     <>
       <S.NavbarContainer>
         <S.NavbarFormGroup>
-          <S.Logo>Skyplanner</S.Logo>
+          <S.Logo>SKYPLANNER</S.Logo>
         </S.NavbarFormGroup>
       </S.NavbarContainer>
     </>

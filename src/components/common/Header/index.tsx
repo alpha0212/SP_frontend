@@ -9,9 +9,6 @@ export const Header: React.FC<HeaderProps> = (title) => {
   return (
     <>
       <S.HeaderContainer>
-        <S.BackSpaceContainer to="/">
-          <S.BackSpace style={{ fontWeight: 400 }}>&lt;-</S.BackSpace>
-        </S.BackSpaceContainer>
         <S.Container>
           <S.Header>{value}</S.Header>
         </S.Container>

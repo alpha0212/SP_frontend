@@ -34,16 +34,6 @@ export const TimeDataText = styled.div`
   font-size: 3rem;
 `;
 
-export const BackSpaceContainer = styled.div`
-  margin-left: 1rem;
-  margin-top: 1rem;
-`;
-
-export const BackSpace = styled(Link)`
-  text-decoration: none;
-  color: black;
-`;
-
 export const TitleContainer = styled.div`
   width: 100%;
   text-align: center;

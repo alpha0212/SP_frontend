@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "src/components/common";
@@ -6,6 +7,8 @@ import { host } from "src/LinkHost";
 import * as S from "./styled";
 
 // assets
+import LoginIconPNG from "src/assets/LoginIcon.png";
+import PwIconPNG from "src/assets/PwIcon.png";
 
 export const FormInput = () => {
   const [user_id, setUserid] = useState("");
@@ -36,21 +39,35 @@ export const FormInput = () => {
       <S.FormInputContainer>
         <S.InputElementContainer>
           <S.InputContainer>
-            <S.InputElement
-              type="text"
-              onChange={(event) => {
-                setUserid(event.target.value);
-              }}
-              placeholder="아이디"
-            />
-            <S.InputElement
-              type="password"
-              onChange={(event) => {
-                setUserpw(event.target.value);
-              }}
-              placeholder="비밀번호"
-              value={user_pw}
-            />
+            <S.InputElementDiv>
+              <S.InputElementDivContainer>
+                <S.LogoContainer>
+                  <S.LoginLogo src={LoginIconPNG} />
+                </S.LogoContainer>
+                <S.InputElement
+                  type="text"
+                  onChange={(event) => {
+                    setUserid(event.target.value);
+                  }}
+                  placeholder="아이디"
+                />
+              </S.InputElementDivContainer>
+            </S.InputElementDiv>
+            <S.InputElementDiv>
+              <S.InputElementDivContainer>
+                <S.LogoContainer>
+                  <S.LoginLogo src={PwIconPNG} />
+                </S.LogoContainer>
+                <S.InputElement
+                  type="password"
+                  onChange={(event) => {
+                    setUserpw(event.target.value);
+                  }}
+                  placeholder="비밀번호"
+                  value={user_pw}
+                />
+              </S.InputElementDivContainer>
+            </S.InputElementDiv>
             <Button
               disabled={enableButton}
               style={{
