@@ -10500,7 +10500,7 @@ react-scripts@5.0.1:
     webpack-manifest-plugin "^4.0.2"
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
-    fsevents "^2.3.2"
+    fsevents "^2.3.3"
 
 react-shallow-renderer@16.15.0:
   version "16.15.0"
