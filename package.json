@@ -1,11 +1,11 @@
 {
   "name": "spt-frontend",
-  "version": "2.3.2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "craco start",
     "dev": "nodemon server.js",
-    "prepare": "husky install",
+    "prepare": "yarn install",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
