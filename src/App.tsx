@@ -1,11 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { TimeData, Footer, TeacherInput } from "src/components";
+import { TimeData, Footer } from "src/components";
 import { StList, StMenu } from "src/components";
-import { MainPage, TimesPage } from "./pages";
-import { InfoPage } from "./pages/info";
-import { AuthPage } from "./pages/auth";
+import {
+  MainPage,
+  TimesPage,
+  InfoPage,
+  AuthPage,
+  ManagementPage,
+} from "./pages";
 import { TeacherForm } from "src/components";
 import { NotFound } from "./404";
 //react-toastify
@@ -32,10 +36,7 @@ export const App: React.FC = () => {
         </Route>
         <Route path="st" element={<StList />} />
         <Route path="menu" element={<StMenu />} />
-
-        <Route path="teacher">
-          <Route path="input" element={<TeacherInput />} />
-        </Route>
+        <Route path="management" element={<ManagementPage />} />
         <Route path={"*"} element={<NotFound />} />
       </Routes>
       <Footer />
