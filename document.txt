@@ -1,1 +1,0 @@
-Will Fix: 프로필에서 총 공부시간을 계산 방법 -> 데이터의 UserId로 UserId에 해당하는 모든 시간을 sum한다.
