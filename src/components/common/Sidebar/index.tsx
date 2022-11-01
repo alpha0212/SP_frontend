@@ -8,8 +8,23 @@ export const Sidebar: React.FC = () => {
   };
   return (
     <SideContainer testProps={bool}>
-      <button onClick={isOpen}>LOGO</button>
-      {bool ? <div>메뉴</div> : <div></div>}
+      <S.HamburgerContainer testProps={bool} onClick={isOpen}>
+        <S.HamburgerOne />
+        <S.HamburgerTwo testProps={bool} />
+        <S.HamburgerThree testProps={bool} />
+      </S.HamburgerContainer>
+      {bool ? (
+        <>
+          <S.Logo>Management</S.Logo>
+          <S.MenuList>
+            <S.Menus>
+              <S.MenusText>학생검색</S.MenusText>
+            </S.Menus>
+          </S.MenuList>
+        </>
+      ) : (
+        <div></div>
+      )}
     </SideContainer>
   );
 };
