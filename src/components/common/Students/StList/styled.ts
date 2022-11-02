@@ -1,14 +1,28 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
+export const Position = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-top: 5rem;
+`;
+
 export const Container = styled.div`
-  width: 100%;
-  margin-top: 10rem;
+  padding-top: 5rem;
+  width: 80rem;
+  border-radius: 1.5rem;
 `;
 
 export const ListContainer = styled.div`
   margin-top: 5rem;
   text-align: center;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  width: 80%;
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 `;
 
 export const List = styled.div`
@@ -50,10 +64,14 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchContainer = styled.div`
-  width: 100%;
-  margin-top: 7vh;
-  margin-bottom: 3vh;
+  width: 80%;
   text-align: center;
+  margin: auto;
+  margin-bottom: 5rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 export const Search = styled.div`

@@ -49,50 +49,49 @@ export const StList = () => {
     }
   }, []);
   return (
-    <S.Container>
-      {teaState.status ? (
-        <>
-          <S.SearchContainer>
-            <S.Search>
-              <S.SearchInput
-                type={"text"}
-                placeholder={"학생 검색"}
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                }}
-              />
-            </S.Search>
-          </S.SearchContainer>
-          <HorizontalContainer>
-            <Horizontal />
-          </HorizontalContainer>
-          <S.ListContainer>
-            {listOfUsers
-              .filter((value) => {
-                if (searchTerm === "") {
-                  return value.user_name;
-                } else if (
-                  value.user_name
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-                ) {
-                  return value;
-                }
-              })
-              .map((value, key) => {
-                return (
-                  <S.List key={key}>
-                    <S.StName to={`/myinfo/myplan/${value.user_id}`}>
-                      <S.StText>{value.user_name}</S.StText>
-                    </S.StName>
-                  </S.List>
-                );
-              })}
-          </S.ListContainer>
-        </>
-      ) : (
-        <S.Alert>*학생계정으로 로그인되어있습니다.*</S.Alert>
-      )}
-    </S.Container>
+    <S.Position>
+      <S.Container>
+        {teaState.status ? (
+          <>
+            <S.SearchContainer>
+              <S.Search>
+                <S.SearchInput
+                  type={"text"}
+                  placeholder={"학생 검색"}
+                  onChange={(event) => {
+                    setSearchTerm(event.target.value);
+                  }}
+                />
+              </S.Search>
+            </S.SearchContainer>
+            <S.ListContainer>
+              {listOfUsers
+                .filter((value) => {
+                  if (searchTerm === "") {
+                    return value.user_name;
+                  } else if (
+                    value.user_name
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return value;
+                  }
+                })
+                .map((value, key) => {
+                  return (
+                    <S.List key={key}>
+                      <S.StName to={`/myinfo/myplan/${value.user_id}`}>
+                        <S.StText>{value.user_name}</S.StText>
+                      </S.StName>
+                    </S.List>
+                  );
+                })}
+            </S.ListContainer>
+          </>
+        ) : (
+          <S.Alert>*학생계정으로 로그인되어있습니다.*</S.Alert>
+        )}
+      </S.Container>
+    </S.Position>
   );
 };
