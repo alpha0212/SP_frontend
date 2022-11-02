@@ -20,4 +20,4 @@ export * from "./MyInfoTemplate";
 export * from "./ProFile";
 export * from "./Snackbar";
 export * from "./TeacherMenu";
-export * from "./Sidebar";
+export * from "./Managements";
