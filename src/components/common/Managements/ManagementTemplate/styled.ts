@@ -104,6 +104,7 @@ export const Menus = styled.div<{ backgroundProps: boolean }>`
   font-weight: 800;
   border: 1px solid rgba(0, 0, 0, 0.1);
   animation: fadein 2s;
+  margin-top: 5rem;
   @keyframes fadein {
     from {
       opacity: 0;
@@ -113,10 +114,29 @@ export const Menus = styled.div<{ backgroundProps: boolean }>`
     }
   }
   transition: all 0.2s;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+`;
+
+export const DoWeekMenu = styled.div<{ backgroundProps: boolean }>`
+  font-family: Pretendard;
+  width: 18rem;
+  height: 5rem;
+  background-color: ${(props) => (props.backgroundProps ? "#2b2b2b" : "none")};
+  color: ${(props) => (props.backgroundProps ? "white" : "black")};
+  border-radius: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadein 2s;
+  margin-top: 5rem;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
+  transition: all 0.2s;
 `;
 
 export const MenuText = styled.div`
