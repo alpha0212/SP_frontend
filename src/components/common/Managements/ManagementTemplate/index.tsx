@@ -18,8 +18,14 @@ export const ManagementTemplate: React.FC<ManagementTemplateProps> = ({
     setBool(!bool);
   };
   const [clicked, setClicked] = useState(false);
+  const [clicked2, setClicked2] = useState(false);
   const isClicked = () => {
     setClicked(!clicked);
+    setClicked2(false);
+  };
+  const isClicked2 = () => {
+    setClicked2(!clicked2);
+    setClicked(false);
   };
 
   return (
@@ -37,6 +43,9 @@ export const ManagementTemplate: React.FC<ManagementTemplateProps> = ({
               <S.Menus backgroundProps={clicked} onClick={isClicked}>
                 <S.MenuText>학생검색</S.MenuText>
               </S.Menus>
+              <S.DoWeekMenu backgroundProps={clicked2} onClick={isClicked2}>
+                <S.MenuText>할 일 관리</S.MenuText>
+              </S.DoWeekMenu>
             </S.MenuList>
           </>
         ) : (
